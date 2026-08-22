@@ -1,0 +1,1334 @@
+[
+    {
+        "clause_id": "§1.1.1",
+        "clause_title": "1.1 Purpose of the Program",
+        "content": "The Household Support Program provides monthly financial assistance to qualifying households in Calder County to meet essential living costs, together with access to associated support services.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.1 Purpose of the Program",
+        "version": "31 December 2025",
+        "source_order": 1
+    },
+    {
+        "clause_id": "§1.1.2",
+        "clause_title": "1.1 Purpose of the Program",
+        "content": "The Program is administered by the Calder County Department of Household Services (\"the Department\"). Day-to-day administration is carried out by caseworkers at the four district offices.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.1 Purpose of the Program",
+        "version": "31 December 2025",
+        "source_order": 2
+    },
+    {
+        "clause_id": "§1.1.3",
+        "clause_title": "1.1 Purpose of the Program",
+        "content": "Nothing in this manual creates an entitlement beyond that established by the governing statute. Where a provision of this manual confers discretion on the Department, that discretion must be exercised reasonably and the reasons recorded on the case file.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.1 Purpose of the Program",
+        "version": "31 December 2025",
+        "source_order": 3
+    },
+    {
+        "clause_id": "§1.2.1",
+        "clause_title": "1.2 Structure of this manual",
+        "content": "This manual is divided into twelve parts. Parts 1 to 5 address eligibility. Parts 6 and 7 address the calculation of the award. Parts 8 to 10 address the ongoing administration of a claim, including changes of circumstance, overpayments, and recovery. Parts 11 and 12 address review and appeal.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.2 Structure of this manual",
+        "version": "31 December 2025",
+        "source_order": 4
+    },
+    {
+        "clause_id": "§1.2.2",
+        "clause_title": "1.2 Structure of this manual",
+        "content": "Cross-references in this manual are given in the form §4.3.2, referring to Part 4, section 3, paragraph 2.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.2 Structure of this manual",
+        "version": "31 December 2025",
+        "source_order": 5
+    },
+    {
+        "clause_id": "§1.2.3",
+        "clause_title": "1.2 Structure of this manual",
+        "content": "This manual is amended by numbered amendment. Each amendment states its own effective date. Where an amendment is in force, the amended text applies to determinations made on or after the effective date of the amendment, except where the amendment provides otherwise.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.2 Structure of this manual",
+        "version": "31 December 2025",
+        "source_order": 6
+    },
+    {
+        "clause_id": "§1.3.1",
+        "clause_title": "1.3 Interpretation",
+        "content": "In this manual, \"must\" indicates a mandatory requirement, \"may\" indicates a discretion, and \"should\" indicates the ordinary expected practice from which a caseworker may depart where the case file records the reason.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.3 Interpretation",
+        "version": "31 December 2025",
+        "source_order": 7
+    },
+    {
+        "clause_id": "§1.3.2",
+        "clause_title": "1.3 Interpretation",
+        "content": "A period expressed in days means calendar days unless the provision states otherwise. Where the last day of a period falls on a day on which the district office is closed, the period ends on the next day on which the office is open.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.3 Interpretation",
+        "version": "31 December 2025",
+        "source_order": 8
+    },
+    {
+        "clause_id": "§1.3.3",
+        "clause_title": "1.3 Interpretation",
+        "content": "References to a monetary amount are to the amount in force at the date of the determination.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.3 Interpretation",
+        "version": "31 December 2025",
+        "source_order": 9
+    },
+    {
+        "clause_id": "§1.4.1",
+        "clause_title": "Applicant",
+        "content": "— a person who has submitted an application for assistance under the Program and whose application has not yet been determined.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 10
+    },
+    {
+        "clause_id": "§1.4.2",
+        "clause_title": "Recipient",
+        "content": "— a person in receipt of assistance under the Program.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 11
+    },
+    {
+        "clause_id": "§1.4.3",
+        "clause_title": "Household",
+        "content": "— the applicant or recipient together with every other person who ordinarily resides at the same address and who shares living arrangements with the applicant or recipient. Persons sharing an address under a separate tenancy or licence, and having no shared living arrangements, are not members of the household.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 12
+    },
+    {
+        "clause_id": "§1.4.4",
+        "clause_title": "Household member",
+        "content": "— any person falling within §1.4.3 other than the applicant or recipient.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 13
+    },
+    {
+        "clause_id": "§1.4.5",
+        "clause_title": "Dependent child",
+        "content": "— a person under the age of 18 who is a household member, or a person aged 18 to 20 who is a household member and is enrolled in secondary education.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 14
+    },
+    {
+        "clause_id": "§1.4.6",
+        "clause_title": "Full-time student",
+        "content": "— a person enrolled in a course of study at an accredited institution of higher education, where the institution classifies the enrolment as full-time. Enrolment status is determined by reference to the institution's own classification and not by the number of contact hours.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 15
+    },
+    {
+        "clause_id": "§1.4.7",
+        "clause_title": "Countable income",
+        "content": "— income falling within Part 6 that is not disregarded under §6.4.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 16
+    },
+    {
+        "clause_id": "§1.4.8",
+        "clause_title": "Change of circumstances",
+        "content": "— any change in the facts on which a determination of eligibility or award was based, including a change in household composition, income, address, or the circumstances of any household member.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 17
+    },
+    {
+        "clause_id": "§1.4.9",
+        "clause_title": "Determination",
+        "content": "— a decision by the Department on entitlement, amount, suspension, or termination.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 18
+    },
+    {
+        "clause_id": "§1.4.10",
+        "clause_title": "District office",
+        "content": "— any of the four offices of the Department at Calder Central, Northgate, Weybridge, and Ash Hill.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 19
+    },
+    {
+        "clause_id": "§1.4.11",
+        "clause_title": "Working day",
+        "content": "— a day on which the district office is open to the public.",
+        "part_title": "Part 1 — Scope and Definitions",
+        "section_title": "1.4 Definitions",
+        "version": "31 December 2025",
+        "source_order": 20
+    },
+    {
+        "clause_id": "§2.1.1",
+        "clause_title": "2.1 The basic conditions",
+        "content": "A person is eligible for assistance under the Program if, at the date of determination, that person satisfies each of the conditions in §2.1.2.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.1 The basic conditions",
+        "version": "31 December 2025",
+        "source_order": 21
+    },
+    {
+        "clause_id": "§2.1.2",
+        "clause_title": "2.1 The basic conditions",
+        "content": "The conditions are that the person —\n\n(a) is resident in Calder County and satisfies Part 3;\n\n(b) is aged 18 or over, or satisfies §2.3;\n\n(c) has countable income not exceeding the applicable threshold under Part 6;\n\n(d) has countable resources not exceeding the limit in §2.4;\n\n(e) is not excluded under Part 4; and\n\n(f) has made a valid application under Part 8.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.1 The basic conditions",
+        "version": "31 December 2025",
+        "source_order": 22
+    },
+    {
+        "clause_id": "§2.1.3",
+        "clause_title": "2.1 The basic conditions",
+        "content": "Eligibility is assessed at the level of the household. Where more than one member of a household would independently qualify, one application is made on behalf of the household and one award is made.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.1 The basic conditions",
+        "version": "31 December 2025",
+        "source_order": 23
+    },
+    {
+        "clause_id": "§2.2.1",
+        "clause_title": "2.2 Continuing eligibility",
+        "content": "Eligibility must be satisfied throughout the period of the award. A recipient who ceases to satisfy any condition in §2.1.2 ceases to be eligible from the date the condition ceased to be satisfied.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.2 Continuing eligibility",
+        "version": "31 December 2025",
+        "source_order": 24
+    },
+    {
+        "clause_id": "§2.2.2",
+        "clause_title": "2.2 Continuing eligibility",
+        "content": "The Department reviews each award at intervals not exceeding twelve months. A review is not a fresh application and does not require the recipient to re-establish matters already determined, unless there has been a change of circumstances affecting those matters.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.2 Continuing eligibility",
+        "version": "31 December 2025",
+        "source_order": 25
+    },
+    {
+        "clause_id": "§2.3.1",
+        "clause_title": "2.3 Applicants under 18",
+        "content": "A person aged 16 or 17 may be eligible where that person —\n\n(a) is not a household member of any other household; and\n\n(b) has no person with parental responsibility able and willing to provide support; or\n\n(c) is a parent of a dependent child residing with them.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.3 Applicants under 18",
+        "version": "31 December 2025",
+        "source_order": 26
+    },
+    {
+        "clause_id": "§2.3.2",
+        "clause_title": "2.3 Applicants under 18",
+        "content": "An application under §2.3.1 must be referred to a supervisor before determination.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.3 Applicants under 18",
+        "version": "31 December 2025",
+        "source_order": 27
+    },
+    {
+        "clause_id": "§2.4.1",
+        "clause_title": "2.4 Resources",
+        "content": "A household is not eligible where the total countable resources of the household exceed $4,000.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.4 Resources",
+        "version": "31 December 2025",
+        "source_order": 28
+    },
+    {
+        "clause_id": "§2.4.2",
+        "clause_title": "2.4 Resources",
+        "content": "The following are not countable resources —\n\n(a) the home in which the household ordinarily resides;\n\n(b) one motor vehicle per household;\n\n(c) household goods and personal effects;\n\n(d) funds held in a designated education savings account for a dependent child;\n\n(e) the surrender value of a life insurance policy where that value does not exceed $1,500.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.4 Resources",
+        "version": "31 December 2025",
+        "source_order": 29
+    },
+    {
+        "clause_id": "§2.4.3",
+        "clause_title": "2.4 Resources",
+        "content": "Resources held jointly with a person who is not a household member are countable in proportion to the recipient's beneficial interest. Where the proportion cannot be established, an equal division is presumed.",
+        "part_title": "Part 2 — General Conditions of Eligibility",
+        "section_title": "2.4 Resources",
+        "version": "31 December 2025",
+        "source_order": 30
+    },
+    {
+        "clause_id": "§3.1.1",
+        "clause_title": "3.1 The residence condition",
+        "content": "An applicant satisfies the residence condition where the applicant ordinarily resides at an address in Calder County and intends to continue to do so.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.1 The residence condition",
+        "version": "31 December 2025",
+        "source_order": 31
+    },
+    {
+        "clause_id": "§3.1.2",
+        "clause_title": "3.1 The residence condition",
+        "content": "Ordinary residence is a question of fact. Physical presence on the date of application is neither necessary nor sufficient.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.1 The residence condition",
+        "version": "31 December 2025",
+        "source_order": 32
+    },
+    {
+        "clause_id": "§3.1.3",
+        "clause_title": "3.1 The residence condition",
+        "content": "An applicant who has no fixed address but whose connection to the County is established under §3.3 satisfies the residence condition.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.1 The residence condition",
+        "version": "31 December 2025",
+        "source_order": 33
+    },
+    {
+        "clause_id": "§3.2.1",
+        "clause_title": "3.2 Temporary absence from the County",
+        "content": "A recipient who is temporarily absent from Calder County continues to satisfy the residence condition for the first 28 days of the absence.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.2 Temporary absence from the County",
+        "version": "31 December 2025",
+        "source_order": 34
+    },
+    {
+        "clause_id": "§3.2.2",
+        "clause_title": "3.2 Temporary absence from the County",
+        "content": "The period in §3.2.1 is extended to 90 days where the absence is for the purpose of —\n\n(a) receiving medical treatment that is not available within the County;\n\n(b) accompanying a household member receiving such treatment; or\n\n(c) attending to the affairs of a deceased relative.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.2 Temporary absence from the County",
+        "version": "31 December 2025",
+        "source_order": 35
+    },
+    {
+        "clause_id": "§3.2.3",
+        "clause_title": "3.2 Temporary absence from the County",
+        "content": "Temporary absence does not include absence for the purpose of full-time education, which is addressed separately.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.2 Temporary absence from the County",
+        "version": "31 December 2025",
+        "source_order": 36
+    },
+    {
+        "clause_id": "§3.2.4",
+        "clause_title": "3.2 Temporary absence from the County",
+        "content": "An absence exceeding the applicable period ends eligibility from the first day following the expiry of that period, unless the Department is satisfied that the recipient intended throughout to return and that the extension of the absence was outside the recipient's control.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.2 Temporary absence from the County",
+        "version": "31 December 2025",
+        "source_order": 37
+    },
+    {
+        "clause_id": "§3.3.1",
+        "clause_title": "3.3 Applicants with no fixed address",
+        "content": "Where an applicant has no fixed address, connection to the County may be established by —\n\n(a) a period of at least 30 days spent in the County immediately before application;\n\n(b) registration with a general practitioner, shelter, or day service in the County; or\n\n(c) confirmation from a recognised support agency operating in the County.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.3 Applicants with no fixed address",
+        "version": "31 December 2025",
+        "source_order": 38
+    },
+    {
+        "clause_id": "§3.3.2",
+        "clause_title": "3.3 Applicants with no fixed address",
+        "content": "Correspondence for an applicant with no fixed address may be directed to a district office and held for collection. The Department must record the arrangement on the case file and must not treat non-collection of correspondence as a failure to respond for the purposes of §8.6.",
+        "part_title": "Part 3 — Residence",
+        "section_title": "3.3 Applicants with no fixed address",
+        "version": "31 December 2025",
+        "source_order": 39
+    },
+    {
+        "clause_id": "§4.1.1",
+        "clause_title": "4.1 Excluded persons",
+        "content": "A person is excluded from eligibility where that person —\n\n(a) is subject to an unexpired sanction under §10.5;\n\n(b) is detained in a correctional facility;\n\n(c) is in receipt of assistance from an equivalent program administered by another county or state; or\n\n(d) has been determined under §9.6 to have obtained assistance by deliberate misrepresentation, for the period stated in that determination.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.1 Excluded persons",
+        "version": "31 December 2025",
+        "source_order": 40
+    },
+    {
+        "clause_id": "§4.1.2",
+        "clause_title": "4.1 Excluded persons",
+        "content": "Exclusion of one household member does not exclude the household. Where a household member is excluded, that member's needs are removed from the calculation under Part 7 but that member's income remains countable under Part 6.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.1 Excluded persons",
+        "version": "31 December 2025",
+        "source_order": 41
+    },
+    {
+        "clause_id": "§4.2.1",
+        "clause_title": "4.2 Persons in residential care",
+        "content": "A person residing in a residential care facility is not a member of the household of which they were previously a member, from the date the residence becomes permanent.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.2 Persons in residential care",
+        "version": "31 December 2025",
+        "source_order": 42
+    },
+    {
+        "clause_id": "§4.2.2",
+        "clause_title": "4.2 Persons in residential care",
+        "content": "Residence in a residential care facility is treated as temporary for the first 56 days.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.2 Persons in residential care",
+        "version": "31 December 2025",
+        "source_order": 43
+    },
+    {
+        "clause_id": "§4.3.1",
+        "clause_title": "4.3 Recipient obligations",
+        "content": "A recipient must —\n\n(a) provide the Department with any information reasonably required for the administration of the award;\n\n(b) attend an interview at a district office where required to do so under §8.5;\n\n(c) notify the Department of any change of circumstances in accordance with §4.3.2; and\n\n(d) repay any amount recoverable under Part 9.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.3 Recipient obligations",
+        "version": "31 December 2025",
+        "source_order": 44
+    },
+    {
+        "clause_id": "§4.3.2",
+        "clause_title": "4.3 Recipient obligations",
+        "content": "A recipient must report any change in household composition, income, address, or the circumstances of any household member within **10 calendar days** of the change occurring, or within 10 calendar days of the recipient becoming aware of the change, whichever is later.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.3 Recipient obligations",
+        "version": "31 December 2025",
+        "source_order": 45
+    },
+    {
+        "clause_id": "§4.3.3",
+        "clause_title": "4.3 Recipient obligations",
+        "content": "A report under §4.3.2 may be made in person at a district office, by telephone to the Program line, in writing, or through the online account. The date of report is the date the report is received by the Department, regardless of the method used.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.3 Recipient obligations",
+        "version": "31 December 2025",
+        "source_order": 46
+    },
+    {
+        "clause_id": "§4.3.4",
+        "clause_title": "4.3 Recipient obligations",
+        "content": "Failure to report within the period in §4.3.2 may result in a sanction under §10.5 and may result in an overpayment recoverable under Part 9.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.3 Recipient obligations",
+        "version": "31 December 2025",
+        "source_order": 47
+    },
+    {
+        "clause_id": "§5.1.1",
+        "clause_title": "5.1 Households including a person in residential care",
+        "content": "Where a household member enters residential care, the award is recalculated from the date the residence is treated as permanent under §4.2.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.1 Households including a person in residential care",
+        "version": "31 December 2025",
+        "source_order": 48
+    },
+    {
+        "clause_id": "§5.1.2",
+        "clause_title": "5.1 Households including a person in residential care",
+        "content": "During the period in which the residence is treated as temporary, the award is unchanged.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.1 Households including a person in residential care",
+        "version": "31 December 2025",
+        "source_order": 49
+    },
+    {
+        "clause_id": "§5.2.1",
+        "clause_title": "5.2 Households including a temporarily absent member",
+        "content": "A household member who is temporarily absent from the household address remains a household member for the first 28 days of the absence.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.2 Households including a temporarily absent member",
+        "version": "31 December 2025",
+        "source_order": 50
+    },
+    {
+        "clause_id": "§5.2.2",
+        "clause_title": "5.2 Households including a temporarily absent member",
+        "content": "The period in §5.2.1 is extended to 90 days where the absence is for a reason listed in §3.2.2.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.2 Households including a temporarily absent member",
+        "version": "31 December 2025",
+        "source_order": 51
+    },
+    {
+        "clause_id": "§5.2.3",
+        "clause_title": "5.2 Households including a temporarily absent member",
+        "content": "Temporary absence does not include absence for the purpose of full-time education, which is addressed separately.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.2 Households including a temporarily absent member",
+        "version": "31 December 2025",
+        "source_order": 52
+    },
+    {
+        "clause_id": "§5.3.1",
+        "clause_title": "5.3 Households including a person receiving a training allowance",
+        "content": "Where a household member is in receipt of a training allowance under a recognised employment program, that allowance is disregarded in full under §6.4.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.3 Households including a person receiving a training allowance",
+        "version": "31 December 2025",
+        "source_order": 53
+    },
+    {
+        "clause_id": "§5.3.2",
+        "clause_title": "5.3 Households including a person receiving a training allowance",
+        "content": "A household member in receipt of a training allowance remains a household member for all purposes of this manual.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.3 Households including a person receiving a training allowance",
+        "version": "31 December 2025",
+        "source_order": 54
+    },
+    {
+        "clause_id": "§5.4.1",
+        "clause_title": "5.4 Households including a person in receipt of a care allowance",
+        "content": "Where a household member is in receipt of a care allowance in respect of the care of another household member, the allowance is disregarded to the extent set out in §6.4.1(f).",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.4 Households including a person in receipt of a care allowance",
+        "version": "31 December 2025",
+        "source_order": 55
+    },
+    {
+        "clause_id": "§5.4.2",
+        "clause_title": "5.4 Households including a person in receipt of a care allowance",
+        "content": "The presence of a care allowance does not of itself alter the composition of the household.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.4 Households including a person in receipt of a care allowance",
+        "version": "31 December 2025",
+        "source_order": 56
+    },
+    {
+        "clause_id": "§5.5.1",
+        "clause_title": "5.5 Households with a member subject to immigration conditions",
+        "content": "Where a household member is subject to a condition prohibiting recourse to public assistance, that member's needs are excluded from the calculation under Part 7 and that member's income is disregarded.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.5 Households with a member subject to immigration conditions",
+        "version": "31 December 2025",
+        "source_order": 57
+    },
+    {
+        "clause_id": "§5.5.2",
+        "clause_title": "5.5 Households with a member subject to immigration conditions",
+        "content": "A case falling within §5.5.1 must be referred to a supervisor before determination.",
+        "part_title": "Part 5 — Special Household Circumstances",
+        "section_title": "5.5 Households with a member subject to immigration conditions",
+        "version": "31 December 2025",
+        "source_order": 58
+    },
+    {
+        "clause_id": "§6.1.1",
+        "clause_title": "6.1 General",
+        "content": "The countable income of a household is the total income of every household member, less the disregards in §6.4.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.1 General",
+        "version": "31 December 2025",
+        "source_order": 59
+    },
+    {
+        "clause_id": "§6.1.2",
+        "clause_title": "6.1 General",
+        "content": "Income is counted in the period in which it is received, except where §6.3 applies.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.1 General",
+        "version": "31 December 2025",
+        "source_order": 60
+    },
+    {
+        "clause_id": "§6.2.1",
+        "clause_title": "6.2 Income that is counted",
+        "content": "The following are counted in full —\n\n(a) earnings from employment, before deductions other than tax and mandatory contributions;\n\n(b) net profit from self-employment, calculated under §6.5;\n\n(c) periodic payments under a pension or annuity;\n\n(d) maintenance received in respect of an adult;\n\n(e) rental income, net of allowable expenses;\n\n(f) payments under any state or federal program other than those listed in §6.4.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.2 Income that is counted",
+        "version": "31 December 2025",
+        "source_order": 61
+    },
+    {
+        "clause_id": "§6.3.1",
+        "clause_title": "6.3 Irregular and lump-sum income",
+        "content": "A lump sum received by a household member is treated as a resource under §2.4 from the date of receipt, and is not counted as income, except where §6.3.2 applies.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.3 Irregular and lump-sum income",
+        "version": "31 December 2025",
+        "source_order": 62
+    },
+    {
+        "clause_id": "§6.3.2",
+        "clause_title": "6.3 Irregular and lump-sum income",
+        "content": "Where a lump sum represents arrears of income that would have been counted had it been paid when due, it is counted as income and attributed to the period to which it relates.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.3 Irregular and lump-sum income",
+        "version": "31 December 2025",
+        "source_order": 63
+    },
+    {
+        "clause_id": "§6.3.3",
+        "clause_title": "6.3 Irregular and lump-sum income",
+        "content": "Irregular earnings are averaged over the thirteen weeks preceding the determination, or over such shorter period as gives a fair reflection of the household's circumstances.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.3 Irregular and lump-sum income",
+        "version": "31 December 2025",
+        "source_order": 64
+    },
+    {
+        "clause_id": "§6.4.1",
+        "clause_title": "6.4 Disregards",
+        "content": "The following are disregarded —\n\n(a) the first **$120 per month** of household earnings from employment;\n\n(b) child support received in respect of a dependent child;\n\n(c) a training allowance falling within §5.3;\n\n(d) payments made in respect of a disability and intended to meet the additional costs of that disability;\n\n(e) charitable payments made irregularly and not intended to meet ordinary living costs;\n\n(f) a care allowance, to the extent of $200 per month;\n\n(g) the income of a dependent child.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.4 Disregards",
+        "version": "31 December 2025",
+        "source_order": 65
+    },
+    {
+        "clause_id": "§6.4.2",
+        "clause_title": "6.4 Disregards",
+        "content": "The disregard in §6.4.1(a) applies once per household and not once per earner.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.4 Disregards",
+        "version": "31 December 2025",
+        "source_order": 66
+    },
+    {
+        "clause_id": "§6.5.1",
+        "clause_title": "6.5 Self-employment",
+        "content": "Net profit is gross receipts less expenses wholly and necessarily incurred in the business.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.5 Self-employment",
+        "version": "31 December 2025",
+        "source_order": 67
+    },
+    {
+        "clause_id": "§6.5.2",
+        "clause_title": "6.5 Self-employment",
+        "content": "The following are not allowable expenses — capital expenditure, depreciation, entertainment, and any payment to a household member.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.5 Self-employment",
+        "version": "31 December 2025",
+        "source_order": 68
+    },
+    {
+        "clause_id": "§6.5.3",
+        "clause_title": "6.5 Self-employment",
+        "content": "Where self-employment has been carried on for less than thirteen weeks, the Department may estimate net profit on the basis of the trading to date.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.5 Self-employment",
+        "version": "31 December 2025",
+        "source_order": 69
+    },
+    {
+        "clause_id": "§6.6.1",
+        "clause_title": "6.6 Income thresholds",
+        "content": "A household is not eligible where countable income exceeds the applicable threshold. The thresholds are —\n\n| Household size | Monthly threshold |\n|:--|:--|\n| 1 | $1,180 |\n| 2 | $1,590 |\n| 3 | $2,000 |\n| 4 | $2,410 |\n| 5 | $2,820 |\n| each additional member | + $410 |",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.6 Income thresholds",
+        "version": "31 December 2025",
+        "source_order": 70
+    },
+    {
+        "clause_id": "§7.1.1",
+        "clause_title": "7.1 The award",
+        "content": "The monthly award is the applicable needs figure for the household under §7.2, less countable income.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.1 The award",
+        "version": "31 December 2025",
+        "source_order": 71
+    },
+    {
+        "clause_id": "§7.1.2",
+        "clause_title": "7.1 The award",
+        "content": "Where the resulting figure is less than $25, no award is made.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.1 The award",
+        "version": "31 December 2025",
+        "source_order": 72
+    },
+    {
+        "clause_id": "§7.1.3",
+        "clause_title": "7.1 The award",
+        "content": "The needs figure is calculated by reference to household size and composition, except in the case of full-time students (see §5.4), and is subject to the adjustments in §7.3.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.1 The award",
+        "version": "31 December 2025",
+        "source_order": 73
+    },
+    {
+        "clause_id": "§7.2.1",
+        "clause_title": "7.2 Needs figures",
+        "content": "The monthly needs figures are —\n\n| Household composition | Monthly needs figure |\n|:--|:--|\n| Single adult | $1,240 |\n| Couple | $1,670 |\n| Each dependent child | + $330 |\n| Single adult with one or more dependent children | $1,480 base |",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.2 Needs figures",
+        "version": "31 December 2025",
+        "source_order": 74
+    },
+    {
+        "clause_id": "§7.2.2",
+        "clause_title": "7.2 Needs figures",
+        "content": "A household member who is excluded under Part 4 is not counted for the purposes of §7.2.1.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.2 Needs figures",
+        "version": "31 December 2025",
+        "source_order": 75
+    },
+    {
+        "clause_id": "§7.3.1",
+        "clause_title": "7.3 Adjustments",
+        "content": "The needs figure is increased by $90 per month where a household member has been assessed as requiring assistance with two or more activities of daily living.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.3 Adjustments",
+        "version": "31 December 2025",
+        "source_order": 76
+    },
+    {
+        "clause_id": "§7.3.2",
+        "clause_title": "7.3 Adjustments",
+        "content": "The needs figure is increased by $140 per month where the household includes a dependent child under the age of 2.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.3 Adjustments",
+        "version": "31 December 2025",
+        "source_order": 77
+    },
+    {
+        "clause_id": "§7.3.3",
+        "clause_title": "7.3 Adjustments",
+        "content": "The needs figure is reduced by the amount of any housing assistance received by the household from another program, to the extent that assistance is intended to meet costs included in the needs figure.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.3 Adjustments",
+        "version": "31 December 2025",
+        "source_order": 78
+    },
+    {
+        "clause_id": "§7.4.1",
+        "clause_title": "7.4 Payment",
+        "content": "Payment is made monthly in arrears, on the day of the month corresponding to the date of the original determination.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.4 Payment",
+        "version": "31 December 2025",
+        "source_order": 79
+    },
+    {
+        "clause_id": "§7.4.2",
+        "clause_title": "7.4 Payment",
+        "content": "Payment is made by direct transfer to a nominated account. Where the recipient has no account, payment may be made by prepaid card.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.4 Payment",
+        "version": "31 December 2025",
+        "source_order": 80
+    },
+    {
+        "clause_id": "§7.4.3",
+        "clause_title": "7.4 Payment",
+        "content": "An award of less than one month's duration is apportioned by reference to the number of days.",
+        "part_title": "Part 7 — Calculation of the Award",
+        "section_title": "7.4 Payment",
+        "version": "31 December 2025",
+        "source_order": 81
+    },
+    {
+        "clause_id": "§8.1.1",
+        "clause_title": "8.1 Making an application",
+        "content": "An application may be made online, in person at a district office, by telephone, or in writing.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.1 Making an application",
+        "version": "31 December 2025",
+        "source_order": 82
+    },
+    {
+        "clause_id": "§8.1.2",
+        "clause_title": "8.1 Making an application",
+        "content": "An application is valid where it contains the name and address of the applicant, the composition of the household, and a signature or its electronic equivalent.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.1 Making an application",
+        "version": "31 December 2025",
+        "source_order": 83
+    },
+    {
+        "clause_id": "§8.1.3",
+        "clause_title": "8.1 Making an application",
+        "content": "The date of application is the date on which a valid application is received by the Department. Where an incomplete application is received and subsequently completed within 30 days, the date of application is the date the incomplete application was received.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.1 Making an application",
+        "version": "31 December 2025",
+        "source_order": 84
+    },
+    {
+        "clause_id": "§8.2.1",
+        "clause_title": "8.2 Evidence",
+        "content": "An applicant must provide evidence of identity, residence, income, and resources.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.2 Evidence",
+        "version": "31 December 2025",
+        "source_order": 85
+    },
+    {
+        "clause_id": "§8.2.2",
+        "clause_title": "8.2 Evidence",
+        "content": "Where an applicant is unable to provide a specified document, the Department must consider alternative evidence and must not refuse an application solely on the ground that a particular document has not been supplied.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.2 Evidence",
+        "version": "31 December 2025",
+        "source_order": 86
+    },
+    {
+        "clause_id": "§8.2.3",
+        "clause_title": "8.2 Evidence",
+        "content": "The Department must give an applicant at least 14 days to supply requested evidence, and must extend that period on request where the applicant is taking reasonable steps to obtain it.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.2 Evidence",
+        "version": "31 December 2025",
+        "source_order": 87
+    },
+    {
+        "clause_id": "§8.3.1",
+        "clause_title": "8.3 Time limits for determination",
+        "content": "The Department must determine an application within 30 days of the date of application.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.3 Time limits for determination",
+        "version": "31 December 2025",
+        "source_order": 88
+    },
+    {
+        "clause_id": "§8.3.2",
+        "clause_title": "8.3 Time limits for determination",
+        "content": "Where the Department is unable to determine within that period because evidence remains outstanding, the Department must notify the applicant in writing before the expiry of the period, stating what remains outstanding and the date by which it is required.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.3 Time limits for determination",
+        "version": "31 December 2025",
+        "source_order": 89
+    },
+    {
+        "clause_id": "§8.3.3",
+        "clause_title": "8.3 Time limits for determination",
+        "content": "An application on which no determination has been made within 90 days of the date of application must be referred to a supervisor.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.3 Time limits for determination",
+        "version": "31 December 2025",
+        "source_order": 90
+    },
+    {
+        "clause_id": "§8.4.1",
+        "clause_title": "8.4 Interim payments",
+        "content": "Where an application has not been determined within 30 days and the delay is not attributable to the applicant, the Department may make an interim payment.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.4 Interim payments",
+        "version": "31 December 2025",
+        "source_order": 91
+    },
+    {
+        "clause_id": "§8.4.2",
+        "clause_title": "8.4 Interim payments",
+        "content": "An interim payment is recoverable against the eventual award and, where the application is refused, is recoverable under Part 9 only where the applicant provided information that was materially false.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.4 Interim payments",
+        "version": "31 December 2025",
+        "source_order": 92
+    },
+    {
+        "clause_id": "§8.5.1",
+        "clause_title": "8.5 Interviews",
+        "content": "The Department may require an applicant or recipient to attend an interview at a district office where —\n\n(a) the information provided is incomplete or inconsistent;\n\n(b) the case has been selected for review under §2.2.2; or\n\n(c) a change of circumstances has been reported that materially affects the award.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.5 Interviews",
+        "version": "31 December 2025",
+        "source_order": 93
+    },
+    {
+        "clause_id": "§8.5.2",
+        "clause_title": "8.5 Interviews",
+        "content": "At least 10 days' notice of an interview must be given, and the notice must state the purpose of the interview.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.5 Interviews",
+        "version": "31 December 2025",
+        "source_order": 94
+    },
+    {
+        "clause_id": "§8.5.3",
+        "clause_title": "8.5 Interviews",
+        "content": "An applicant or recipient may be accompanied at an interview by a person of their choosing.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.5 Interviews",
+        "version": "31 December 2025",
+        "source_order": 95
+    },
+    {
+        "clause_id": "§8.6.1",
+        "clause_title": "8.6 Failure to respond",
+        "content": "Where an applicant fails without good cause to provide requested evidence within the period allowed, the application may be refused.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.6 Failure to respond",
+        "version": "31 December 2025",
+        "source_order": 96
+    },
+    {
+        "clause_id": "§8.6.2",
+        "clause_title": "8.6 Failure to respond",
+        "content": "Where a recipient fails without good cause to provide requested evidence within the period allowed, the award may be suspended under §10.2.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.6 Failure to respond",
+        "version": "31 December 2025",
+        "source_order": 97
+    },
+    {
+        "clause_id": "§8.6.3",
+        "clause_title": "8.6 Failure to respond",
+        "content": "Before refusing or suspending under this section, the Department must make at least two attempts to contact the person, using at least two different methods, and must record those attempts on the case file.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.6 Failure to respond",
+        "version": "31 December 2025",
+        "source_order": 98
+    },
+    {
+        "clause_id": "§8.7.1",
+        "clause_title": "8.7 Notification of determinations",
+        "content": "Every determination must be notified in writing. The notification must state —\n\n(a) the decision;\n\n(b) the reasons for it;\n\n(c) the amount of any award and how it was calculated;\n\n(d) the right to review under Part 11 and the time limit for exercising it.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.7 Notification of determinations",
+        "version": "31 December 2025",
+        "source_order": 99
+    },
+    {
+        "clause_id": "§8.7.2",
+        "clause_title": "8.7 Notification of determinations",
+        "content": "A determination takes effect from the date stated in the notification.",
+        "part_title": "Part 8 — Applications and Determinations",
+        "section_title": "8.7 Notification of determinations",
+        "version": "31 December 2025",
+        "source_order": 100
+    },
+    {
+        "clause_id": "§9.1.1",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "An overpayment arises where assistance has been paid to which the recipient was not entitled.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "31 December 2025",
+        "source_order": 101
+    },
+    {
+        "clause_id": "§9.1.2",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "An overpayment may arise from —\n\n(a) a change of circumstances that was not reported;\n\n(b) a change of circumstances that was reported but not acted upon by the Department;\n\n(c) an error by the Department in the calculation of the award;\n\n(d) information provided by the recipient that was incorrect.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "31 December 2025",
+        "source_order": 102
+    },
+    {
+        "clause_id": "§9.1.3",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "The Department must determine the period and amount of the overpayment and must notify the recipient under §8.7.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "31 December 2025",
+        "source_order": 103
+    },
+    {
+        "clause_id": "§9.1.4",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "Where an overpayment has arisen from a change of circumstances, and the recipient reported the change within the **30 calendar days** required under §4.3, no overpayment shall be established in respect of any period before the date on which the Department was in a position to act on the report.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "31 December 2025",
+        "source_order": 104
+    },
+    {
+        "clause_id": "§9.1.5",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "An overpayment arising solely from an error by the Department, where the recipient could not reasonably have been expected to know that the payment was incorrect, is not recoverable.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "31 December 2025",
+        "source_order": 105
+    },
+    {
+        "clause_id": "§9.2.1",
+        "clause_title": "9.2 Amount recoverable",
+        "content": "The amount recoverable is the difference between the assistance paid and the assistance that would have been paid had the correct facts been known.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.2 Amount recoverable",
+        "version": "31 December 2025",
+        "source_order": 106
+    },
+    {
+        "clause_id": "§9.2.2",
+        "clause_title": "9.2 Amount recoverable",
+        "content": "In calculating the amount recoverable, the Department must apply any income or needs adjustment that would have applied over the same period, whether that adjustment increases or reduces the amount.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.2 Amount recoverable",
+        "version": "31 December 2025",
+        "source_order": 107
+    },
+    {
+        "clause_id": "§9.3.1",
+        "clause_title": "9.3 Recovery",
+        "content": "Recovery may be made by deduction from ongoing assistance, by agreed instalments, or by any other lawful means.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.3 Recovery",
+        "version": "31 December 2025",
+        "source_order": 108
+    },
+    {
+        "clause_id": "§9.3.2",
+        "clause_title": "9.3 Recovery",
+        "content": "Deduction from ongoing assistance must not exceed 10 per cent of the monthly award, or 20 per cent where §9.6 applies.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.3 Recovery",
+        "version": "31 December 2025",
+        "source_order": 109
+    },
+    {
+        "clause_id": "§9.3.3",
+        "clause_title": "9.3 Recovery",
+        "content": "The Department must consider the recipient's circumstances before setting a rate of recovery and must reduce the rate on request where recovery at the standard rate would cause hardship.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.3 Recovery",
+        "version": "31 December 2025",
+        "source_order": 110
+    },
+    {
+        "clause_id": "§9.4.1",
+        "clause_title": "9.4 Waiver",
+        "content": "The Department may waive recovery in whole or in part where —\n\n(a) recovery would cause serious hardship;\n\n(b) the cost of recovery would exceed the amount recoverable; or\n\n(c) the overpayment arose from Departmental error and recovery would be inequitable.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.4 Waiver",
+        "version": "31 December 2025",
+        "source_order": 111
+    },
+    {
+        "clause_id": "§9.4.2",
+        "clause_title": "9.4 Waiver",
+        "content": "A decision on waiver must be recorded with reasons.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.4 Waiver",
+        "version": "31 December 2025",
+        "source_order": 112
+    },
+    {
+        "clause_id": "§9.5.1",
+        "clause_title": "9.5 Time limits",
+        "content": "No overpayment may be established more than 6 years after the date of the last payment to which it relates.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.5 Time limits",
+        "version": "31 December 2025",
+        "source_order": 113
+    },
+    {
+        "clause_id": "§9.5.2",
+        "clause_title": "9.5 Time limits",
+        "content": "There is no time limit on recovery of an overpayment once established.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.5 Time limits",
+        "version": "31 December 2025",
+        "source_order": 114
+    },
+    {
+        "clause_id": "§9.6.1",
+        "clause_title": "9.6 Deliberate misrepresentation",
+        "content": "Where the Department determines that a recipient deliberately misrepresented or deliberately failed to disclose a material fact, the Department may —\n\n(a) recover at the higher rate under §9.3.2; and\n\n(b) exclude the person from eligibility under §4.1.1(d) for a period not exceeding 13 weeks for a first determination, or 26 weeks for a subsequent determination.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.6 Deliberate misrepresentation",
+        "version": "31 December 2025",
+        "source_order": 115
+    },
+    {
+        "clause_id": "§9.6.2",
+        "clause_title": "9.6 Deliberate misrepresentation",
+        "content": "A determination under §9.6.1 must be made by a supervisor and must be based on evidence recorded on the case file. A failure to report, without more, is not evidence of deliberate misrepresentation.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.6 Deliberate misrepresentation",
+        "version": "31 December 2025",
+        "source_order": 116
+    },
+    {
+        "clause_id": "§10.1.1",
+        "clause_title": "10.1 Termination",
+        "content": "An award terminates where the recipient ceases to satisfy any condition in §2.1.2, from the date the condition ceased to be satisfied.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.1 Termination",
+        "version": "31 December 2025",
+        "source_order": 117
+    },
+    {
+        "clause_id": "§10.1.2",
+        "clause_title": "10.1 Termination",
+        "content": "An award terminates on the death of the recipient. Where the household includes surviving members, a fresh application may be made and, if made within 30 days, the date of application is treated as the date of death.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.1 Termination",
+        "version": "31 December 2025",
+        "source_order": 118
+    },
+    {
+        "clause_id": "§10.2.1",
+        "clause_title": "10.2 Suspension",
+        "content": "The Department may suspend an award where —\n\n(a) the recipient has failed to respond under §8.6.2;\n\n(b) there is reason to believe the recipient may no longer be eligible and the matter cannot be determined immediately; or\n\n(c) the recipient's whereabouts are unknown.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.2 Suspension",
+        "version": "31 December 2025",
+        "source_order": 119
+    },
+    {
+        "clause_id": "§10.2.2",
+        "clause_title": "10.2 Suspension",
+        "content": "A suspension must be notified under §8.7 and must state what the recipient must do for the award to be reinstated.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.2 Suspension",
+        "version": "31 December 2025",
+        "source_order": 120
+    },
+    {
+        "clause_id": "§10.2.3",
+        "clause_title": "10.2 Suspension",
+        "content": "A suspension that has continued for 60 days without resolution must be referred to a supervisor for a determination on termination.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.2 Suspension",
+        "version": "31 December 2025",
+        "source_order": 121
+    },
+    {
+        "clause_id": "§10.2.4",
+        "clause_title": "10.2 Suspension",
+        "content": "Where a suspension is lifted, arrears are paid for the whole period of suspension where the recipient was eligible throughout.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.2 Suspension",
+        "version": "31 December 2025",
+        "source_order": 122
+    },
+    {
+        "clause_id": "§10.3.1",
+        "clause_title": "10.3 Reinstatement",
+        "content": "An award terminated in error is reinstated from the date of termination.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.3 Reinstatement",
+        "version": "31 December 2025",
+        "source_order": 123
+    },
+    {
+        "clause_id": "§10.3.2",
+        "clause_title": "10.3 Reinstatement",
+        "content": "Where an award was terminated because a condition ceased to be satisfied, and that condition is satisfied again within 30 days, the recipient may request reinstatement rather than making a fresh application.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.3 Reinstatement",
+        "version": "31 December 2025",
+        "source_order": 124
+    },
+    {
+        "clause_id": "§10.4.1",
+        "clause_title": "10.4 Effect on the household",
+        "content": "Suspension or termination in respect of one household member does not of itself affect the eligibility of the household.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.4 Effect on the household",
+        "version": "31 December 2025",
+        "source_order": 125
+    },
+    {
+        "clause_id": "§10.5.1",
+        "clause_title": "10.5 Sanctions",
+        "content": "The Department may impose a sanction where a recipient, without good cause —\n\n(a) fails to report a change of circumstances within the period required by §4.3.2;\n\n(b) fails to attend an interview required under §8.5; or\n\n(c) fails to comply with a condition attached to the award.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "31 December 2025",
+        "source_order": 126
+    },
+    {
+        "clause_id": "§10.5.2",
+        "clause_title": "10.5 Sanctions",
+        "content": "A sanction is a reduction of the monthly award by 20 per cent for a period of 4 weeks for a first sanction, or 8 weeks for a subsequent sanction within 12 months.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "31 December 2025",
+        "source_order": 127
+    },
+    {
+        "clause_id": "§10.5.3",
+        "clause_title": "10.5 Sanctions",
+        "content": "A sanction must not be imposed where the household includes a dependent child under the age of 2, or where the recipient has been assessed as requiring assistance with two or more activities of daily living.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "31 December 2025",
+        "source_order": 128
+    },
+    {
+        "clause_id": "§10.5.4",
+        "clause_title": "10.5 Sanctions",
+        "content": "Good cause includes illness, a family emergency, a failure of the Department's own systems, and any circumstance that a reasonable person would regard as preventing compliance.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "31 December 2025",
+        "source_order": 129
+    },
+    {
+        "clause_id": "§11.1.1",
+        "clause_title": "11.1 Right to review",
+        "content": "A person affected by a determination may request a review of that determination.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.1 Right to review",
+        "version": "31 December 2025",
+        "source_order": 130
+    },
+    {
+        "clause_id": "§11.1.2",
+        "clause_title": "11.1 Right to review",
+        "content": "A request for review must be made within 30 days of the date of the notification under §8.7. The Department may extend that period where there is good cause for the delay.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.1 Right to review",
+        "version": "31 December 2025",
+        "source_order": 131
+    },
+    {
+        "clause_id": "§11.1.3",
+        "clause_title": "11.1 Right to review",
+        "content": "A request for review may be made in any form, including orally. The Department must record the request and must not require it to be made on a particular form.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.1 Right to review",
+        "version": "31 December 2025",
+        "source_order": 132
+    },
+    {
+        "clause_id": "§11.2.1",
+        "clause_title": "11.2 Conduct of the review",
+        "content": "A review must be carried out by an officer who was not involved in the original determination.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.2 Conduct of the review",
+        "version": "31 December 2025",
+        "source_order": 133
+    },
+    {
+        "clause_id": "§11.2.2",
+        "clause_title": "11.2 Conduct of the review",
+        "content": "The reviewing officer must consider the whole determination and is not limited to the matters raised by the person requesting the review.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.2 Conduct of the review",
+        "version": "31 December 2025",
+        "source_order": 134
+    },
+    {
+        "clause_id": "§11.2.3",
+        "clause_title": "11.2 Conduct of the review",
+        "content": "A review must be completed within 30 days of the request.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.2 Conduct of the review",
+        "version": "31 December 2025",
+        "source_order": 135
+    },
+    {
+        "clause_id": "§11.3.1",
+        "clause_title": "11.3 Outcome",
+        "content": "The reviewing officer may confirm, vary, or set aside the determination.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.3 Outcome",
+        "version": "31 December 2025",
+        "source_order": 136
+    },
+    {
+        "clause_id": "§11.3.2",
+        "clause_title": "11.3 Outcome",
+        "content": "The outcome must be notified under §8.7 and must state the right of appeal under Part 12.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.3 Outcome",
+        "version": "31 December 2025",
+        "source_order": 137
+    },
+    {
+        "clause_id": "§11.4.1",
+        "clause_title": "11.4 Payment pending review",
+        "content": "Where a review concerns a termination or reduction of an award, the Department may continue payment at the previous rate pending the outcome.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.4 Payment pending review",
+        "version": "31 December 2025",
+        "source_order": 138
+    },
+    {
+        "clause_id": "§11.4.2",
+        "clause_title": "11.4 Payment pending review",
+        "content": "Payment continued under §11.4.1 that proves not to have been due is recoverable under Part 9, unless the Department determines otherwise.",
+        "part_title": "Part 11 — Review",
+        "section_title": "11.4 Payment pending review",
+        "version": "31 December 2025",
+        "source_order": 139
+    },
+    {
+        "clause_id": "§12.1.1",
+        "clause_title": "12.1 Right of appeal",
+        "content": "A person who has requested a review and is dissatisfied with the outcome may appeal to the Calder County Assistance Appeals Panel.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.1 Right of appeal",
+        "version": "31 December 2025",
+        "source_order": 140
+    },
+    {
+        "clause_id": "§12.1.2",
+        "clause_title": "12.1 Right of appeal",
+        "content": "An appeal must be lodged within 30 days of the date of the notification of the review outcome.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.1 Right of appeal",
+        "version": "31 December 2025",
+        "source_order": 141
+    },
+    {
+        "clause_id": "§12.1.3",
+        "clause_title": "12.1 Right of appeal",
+        "content": "An appeal may not be lodged until a review has been completed, except where the Department has failed to complete the review within the period in §11.2.3.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.1 Right of appeal",
+        "version": "31 December 2025",
+        "source_order": 142
+    },
+    {
+        "clause_id": "§12.2.1",
+        "clause_title": "12.2 Procedure",
+        "content": "The Panel determines its own procedure, subject to the requirements of fairness.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.2 Procedure",
+        "version": "31 December 2025",
+        "source_order": 143
+    },
+    {
+        "clause_id": "§12.2.2",
+        "clause_title": "12.2 Procedure",
+        "content": "The appellant may appear in person, may be represented, and may call evidence.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.2 Procedure",
+        "version": "31 December 2025",
+        "source_order": 144
+    },
+    {
+        "clause_id": "§12.2.3",
+        "clause_title": "12.2 Procedure",
+        "content": "The Department must provide the Panel and the appellant with the case file and a written submission at least 10 days before the hearing.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.2 Procedure",
+        "version": "31 December 2025",
+        "source_order": 145
+    },
+    {
+        "clause_id": "§12.3.1",
+        "clause_title": "12.3 Decisions of the Panel",
+        "content": "A decision of the Panel is binding on the Department.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.3 Decisions of the Panel",
+        "version": "31 December 2025",
+        "source_order": 146
+    },
+    {
+        "clause_id": "§12.3.2",
+        "clause_title": "12.3 Decisions of the Panel",
+        "content": "The Panel must give reasons in writing within 14 days of the hearing.",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.3 Decisions of the Panel",
+        "version": "31 December 2025",
+        "source_order": 147
+    },
+    {
+        "clause_id": "§12.3.3",
+        "clause_title": "12.3 Decisions of the Panel",
+        "content": "The Department must give effect to a decision of the Panel within 14 days of receiving it.\n\n\n*End of consolidated text as at 31 December 2025.*",
+        "part_title": "Part 12 — Appeal",
+        "section_title": "12.3 Decisions of the Panel",
+        "version": "31 December 2025",
+        "source_order": 148
+    }
+]
