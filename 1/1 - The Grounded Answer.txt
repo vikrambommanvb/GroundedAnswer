@@ -1,0 +1,58 @@
+Problem 1 The Grounded Answer
+Brite Spark 2026 · AI / RAG
+Problem 1 The Grounded Answer
+AI / RAG
+Build an assistant that answers policy questions from a manual, cites the exact clause it used, and admits when the manual does not cover the question.
+
+Why this problem exists
+Public sector programs run on written policy. Eligibility, entitlement, appeal rights, timelines all of it lives in a manual that is amended on a schedule, and staff are expected to apply it correctly to a resident standing in front of them.
+This is the single most requested kind of AI system in the sector right now, and the reason so few of them are in production is not that the retrieval is hard. It is that the consequences of a fluent, confident, wrong answer are severe. If an assistant tells a caseworker that a household qualifies for something it does not, a real person is told yes and later told no, and the program has caused harm while looking efficient.
+So the interesting engineering problem here is not “can you answer the question”. It is “can you build something that knows the edge of what it knows”.
+
+The scenario
+A county benefits office fields roughly two hundred questions a week from front-line staff. The questions are repetitive ,the same forty situations in different clothes. Staff answer them out of a policy manual, which is amended quarterly.
+The manual is not well written. It has grown by accretion over years, sections have been revised without the surrounding text being updated, and the people who wrote different parts of it did not always agree with each other. Staff cope with this by asking a colleague who has been there a long time.
+The office would like to stop depending on that one colleague.
+
+What you are being asked to build
+An assistant that takes a plain-language question and returns an answer that is grounded meaning every substantive claim in the answer traces back to a specific clause in the manual, and the assistant shows you which one.
+Critically, it must also be able to not answer. When the manual does not cover the question, or covers it ambiguously, the correct output is not a best guess. It is an explicit statement that the manual does not settle the matter, together with a sensible indication of who should be asked instead.
+A command-line interface is completely fine. Interface quality is not assessed on this problem.
+
+What we give you
+A synthetic policy corpus of roughly twenty pages, written to behave like a real one.
+You should assume the corpus contains, among ordinary well-behaved content:
+	•	Genuine internal inconsistency. At least one place where the manual, read carefully, says two things that cannot both be true. We will not tell you where.
+	•	An apparent gap. At least one topic that looks from the surrounding text as though it is covered, and on close reading is not. A naive retriever will return confident-looking passages for it.
+These are not bugs in the data pack. They are the problem. A system that handles a clean corpus well and falls over on these two situations has not solved anything a county office needs solved.
+You are also given nothing else no question set, no labels. Building your own evaluation is part of the task.
+
+The floor
+These must all be true. Nothing above the floor counts until every box below is ticked.
+	•	☐ Grounded answers with clause-level citation. Not “according to the manual” the specific clause, identifiable enough that a caseworker could go and read it.
+	•	☐ A visible refusal path. The system can decline to answer, and does so on at least one case where declining is correct. The refusal should tell the user what to do next, not just fail.
+	•	☐ Your own test set of ten questions, with pass/fail results you produced yourself. Choose questions that actually probe the system, including questions you expect it to refuse. Report the failures honestly a test set where everything passes tells us you wrote easy questions.
+	•	☐ Runs from a clean clone using the README alone.
+
+Not required
+Do not spend time on any of these. They earn nothing.
+	•	A web interface, a chat UI, or any front end. A CLI is the expected delivery.
+	•	Training or fine-tuning a model. Use whatever is available to you off the shelf.
+	•	Multi-turn conversation, memory, or session handling. One question, one answer.
+	•	Handling documents other than the corpus you are given.
+	•	Latency optimisation.
+
+If you have time
+Only once the floor is fully met.
+	•	Handle the contradiction explicitly. Rather than picking one side silently, surface that the manual conflicts and show both clauses.
+	•	Calibrate the refusal. Show that your threshold for declining is set somewhere defensible rather than arbitrarily, and be able to explain the trade-off you chose.
+	•	Make the citations verifiable. Something that lets a reader jump straight to the source text.
+
+Remember: the change on day two
+At some point on day two the requirements for this problem will change, and you will not be told in advance what the change is. Every problem in the set gets one.
+Build with that in mind. That does not mean guessing what it is it means the ordinary discipline of keeping your retrieval, your answer construction, and your refusal logic separable enough that one of them can move without the other two being rewritten.
+
+Submitting
+Your repository must contain a running demo, real commit history, DECISIONS.md, and AI-USAGE.md. 
+For this problem specifically, your DECISIONS.md should be clear about where you set the line between answering and refusing, and why. That is a judgement call with no single right answer, and we are interested in your reasoning for the one you made.
+Full rules, the complete rubric, and the AI usage policy are in the Participant Handbook.
