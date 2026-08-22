@@ -9,7 +9,12 @@ This document logs key choices, rejected alternatives, time-based cuts, limitati
 
 ## 2. Retrieval Strategy
 - **Parsing/Chunking**: Implemented in `ingest.py`. The parser reads `policy-manual.md` line-by-line and splits it into logical paragraph-level chunks based on clause number patterns (`**X.Y.Z**`). This guarantees that each clause remains structurally intact as a single retrieval unit. Bullet lists (e.g. `(a)`, `(b)`) and Markdown tables are fully preserved within their respective clause chunks. Horizontal rules (`---`) separating parts are filtered out.
-- **Retrieval Mechanism**: (Planned) Hybrid search combining direct clause ID lookup, term-matching keywords, and cosine-similarity semantic embeddings.
+- **Retrieval Mechanism**: Implemented in `retriever.py`. It features:
+  1. **Direct Clause ID Lookup**: Scans queries for clause references (e.g. `4.3.2`) using regex, boosting direct matches to the top (score `1.5`, method `'direct'`) to guarantee accurate retrieval for explicit references.
+  2. **Keyword Retrieval (BM25)**: A pure Python implementation of the BM25 probabilistic relevance algorithm (defaulting to standard parameters `k1=1.5`, `b=0.75`), removing dependencies on external database servers or search indices.
+  3. **Semantic Retrieval**: Uses the Gemini `models/text-embedding-004` API to generate embeddings. To avoid latency, it uses batch requests during indexing and attempts to write-back/cache the embeddings directly in `clauses.json`.
+  4. **Hybrid Score Aggregation**: Aggregates normalized keyword and cosine-similarity semantic scores using configurable weights (`KEYWORD_WEIGHT = 0.6`, `SEMANTIC_WEIGHT = 0.4`), gracefully falling back to keyword-only search if `GEMINI_API_KEY` is not present.
+  5. **Relevance Thresholding**: Filters candidates below `MIN_RELEVANCE_SCORE = 0.15` to detect out-of-scope queries early.
 
 ## 3. Grounding & Citation Strategy
 - **Grounding constraint**: ...
