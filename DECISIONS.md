@@ -26,13 +26,18 @@ This document logs key choices, rejected alternatives, time-based cuts, limitati
   - Otherwise, we use the fallback: `"a supervisor at the Department of Household Services or your local district office."` which is clearly documented as a fallback and not policy text.
 
 ## 4. What Was Rejected
-- ...
+- **Fixed-size/Token-based Text Splitters**: Standard chunking methods (e.g., splitting every 500 characters with overlap) were rejected. These splitters cut paragraphs, detach list items from their headers, and separate clause numbers (`§X.Y.Z`) from their context, which would severely degrade the precision of clause citations.
+- **External Vector Database Servers**: Third-party databases (like Pinecone, Milvus, or ChromaDB servers) were rejected to keep the deployment footprint zero-dependency and fast. For 148 documents, an in-memory TF-IDF/BM25 combined with local numpy cosine vectors runs in microseconds and compiles cleanly in any environment.
+- **Silent Choice in Contradictions**: We rejected having the model silently pick one clause over another (e.g., preferring 10 days over 30 days based on retrieval order or semantic weight). This violates safety regulations, so showing both and flagging the contradiction was preferred.
 
 ## 5. What Was Cut (Due to Time)
-- ...
+- **SQLite Embedding Cache**: Embedding caches are currently written back to `clauses.json`. Using an SQLite DB to store binary embeddings would be a cleaner production strategy but was cut to keep the file structure simple.
+- **caseworker Web UI**: A simple web application utilizing Streamlit or HTML was cut. The CLI is the primary delivery vehicle.
 
 ## 6. What the Solution Does Not Do / Limitations
-- ...
+- **Does Not Answer Student Rules**: Because of the gaps in the manual (directing to care allowance clauses and missing student needs calculations), the assistant will safely refuse questions about student award calculations.
+- **Multi-turn Memory**: The assistant answers one question at a time to prevent state pollution and conversation-drift grounding violations.
 
 ## 7. Next Steps / First Improvements
-- ...
+- **SQLite Database Storage**: Move from `clauses.json` to a local `policy.db` storing structured text and precomputed embedding blobs for better indexing and scalability.
+- **Interactive Caseworker UI**: Develop a lightweight Web UI (e.g. via Streamlit) that prints policy answers and allows caseworkers to click on citations to inspect the source manual text.
