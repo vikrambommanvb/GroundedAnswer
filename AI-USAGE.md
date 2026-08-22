@@ -9,4 +9,5 @@
 - **Scaffolding**:
   - Drafted and refined the logic for `ingest.py` to parse markdown sections and paragraphs.
   - Wrote the BM25, cosine-similarity, and hybrid retrieval logic in `retriever.py`.
-- **Debugging / Verification**: Ran and validated manual parsing checks on the generated `clauses.json` outputs and verified `retriever.py` output via local zsh terminal execution.
+  - Scaffolding of programmatic validation and contact routing rules in `validator.py`.
+- **Debugging / Verification**: Ran and validated manual parsing checks on the generated `clauses.json` outputs and verified `retriever.py` and `validator.py` output via local zsh terminal execution.

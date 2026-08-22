@@ -17,8 +17,13 @@ This document logs key choices, rejected alternatives, time-based cuts, limitati
   5. **Relevance Thresholding**: Filters candidates below `MIN_RELEVANCE_SCORE = 0.15` to detect out-of-scope queries early.
 
 ## 3. Grounding & Citation Strategy
-- **Grounding constraint**: ...
-- **Out-of-bounds Detection**: ...
+- **Grounding constraint**: The LLM will receive only the user's question and the retrieved policy clauses. It will be instructed via system prompts to answer strictly from the text, never infer or extrapolate, and append clause citations like `[§X.Y.Z]`.
+- **Out-of-bounds Detection**: A hybrid, two-layered validation system is implemented:
+  1. **Layer 1: Programmatic Validation (`validator.py`)**: Filters out queries that are extremely short, have no retrieved clauses, have scores below `0.15`, or contain obvious out-of-scope keyword patterns (e.g., garbage, pet license) before calling the LLM. Generic queries (like "Am I eligible?") are allowed if there are high-scoring policy clauses, enabling the LLM to present general rules without guessing.
+  2. **Layer 2: LLM Validation**: If a query passes Layer 1 but the retrieved clauses do not contain the answer, the LLM is instructed to refuse by outputting the refusal string.
+- **Refusal / Contact Selection**:
+  - We never invent contact info. If the retrieved clauses mention specific roles (e.g., `supervisor`, `reviewing officer`, `Appeals Panel`), we dynamically build a focused contact instruction (e.g., advising to contact a supervisor for misrepresentation cases).
+  - Otherwise, we use the fallback: `"a supervisor at the Department of Household Services or your local district office."` which is clearly documented as a fallback and not policy text.
 
 ## 4. What Was Rejected
 - ...
