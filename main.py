@@ -87,6 +87,16 @@ def main():
             refusal_contact=contact,
             query_dates=query_dates
         )
+        # Print extracted timeline context
+        det_dt = query_dates.get("determination_date")
+        ev_dt = query_dates.get("event_date")
+        is_span = query_dates.get("is_spanning")
+        
+        if det_dt or ev_dt or is_span:
+            timeline_str = f"[Timeline Context: Determination Date = {det_dt or 'Current'}, Event/Change Date = {ev_dt or 'Current'}{', Spanning = Yes' if is_span else ''}]"
+            print(timeline_str)
+            print("-" * len(timeline_str))
+            
         print(answer)
     except MissingAPIKeyError as e:
         print(f"\nConfiguration Error: {e}")

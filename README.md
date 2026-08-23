@@ -4,16 +4,19 @@
 A county benefits office fields hundreds of repetitive policy questions every week. Staff apply rules from a policy manual that is amended quarterly. Front-line staff frequently cope with manual ambiguities and updates by asking senior colleagues. The office needs a reliable, automated assistant to answer these questions while avoiding incorrect or fabricated policy advice, which can lead to administrative harm and incorrect determinations.
 
 ## Goal
-Build a command-line RAG assistant for the Calder County Household Support Program that:
-1. Answers questions in plain language based *only* on the provided policy manual.
-2. Cites the exact clause relied upon (e.g. `[§4.3.2]`).
-3. Refuses to answer when the manual does not cover the question or covers it ambiguously, indicating the correct authority to contact.
-4. Identifies internal policy contradictions and shows both conflicting clauses rather than picking one.
+Build a command-line **Date-Aware Grounded RAG** assistant for the Calder County Household Support Program that:
+1. Answers questions in plain language based *only* on the provided policy manual and any amendment overlays (such as Amendment No. 2026-01).
+2. Dynamically resolves which policy version applies based on the date of the claim/event/determination mentioned in the query.
+3. Cites the exact clause and/or amendment paragraph relied upon (e.g. `[§4.3.2]` or `[Amendment §2.1]`).
+4. Refuses to answer when the manual does not cover the question or covers it ambiguously, indicating the correct authority to contact.
+5. Identifies internal policy contradictions historically and dynamically (reporting pre-amendment contradictions while recognizing when amendments have resolved them).
 
 ## Features
+- **Date-Aware Version Overlay Resolution**: Automatically parses dates from queries to determine `determination_date` and `event_date`, applying transitional rules (§5.1, §5.2, §5.3) to resolve which clause versions are active.
+- **Cross-Reference Auto-Retrieval**: Automatically expands the context when retrieved amendment paragraphs refer to other base clauses (e.g., pulling in §6.4.1 when Amendment §1.1 is retrieved), guaranteeing complete grounding and validation.
 - **Logical Clause Parsing**: Instead of arbitrary text splitting, the ingestion parses the manual by logical paragraphs and parts, keeping tabular data and list structures intact.
-- **Hybrid Keyword & Semantic Search**: Combines a native Python BM25 index with Gemini semantic embeddings (`models/text-embedding-004`), featuring automatic embedding batching and local caching.
-- **Direct Clause ID Boost**: Scans queries for direct clause references (e.g. `4.3.2` or `§4.3.2`) and overrides standard scores to guarantee direct delivery.
+- **Hybrid Keyword Search**: A native Python BM25 index that works completely offline without API keys.
+- **Direct Clause ID Boost**: Scans queries for direct clause references (e.g. `4.3.2` or `§4.3.2` or `Amendment §2.1`) and overrides standard scores to guarantee direct delivery.
 - **Evidence Validation Guardrails**: A hard programmatic validation layer (`validator.py`) filters out generic queries, low-relevance results, and obvious out-of-scope keywords before any LLM execution occurs.
 - **Contradiction Management**: Instructs the LLM to highlight conflicts, outputting details and citations for both conflicting rules.
 - **Citation Guardrail Validation**: Performs regex checks on generated answers to verify that all cited clauses exist in the database and were actually provided as retrieved context, failing back to refusal if validation fails.
