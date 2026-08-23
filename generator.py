@@ -176,33 +176,48 @@ def generate_grounded_answer(query, retrieved_clauses, all_clauses, refusal_cont
         f"Answer:"
     )
 
-    try:
-        config = types.GenerateContentConfig(
-            system_instruction=system_prompt,
-            temperature=0.0,
-            max_output_tokens=1024,
-        )
-        
-        response = client.models.generate_content(
-            model=model_name,
-            contents=user_prompt,
-            config=config
-        )
-        
-        response_text = response.text.strip()
-        
-        # Handle case where LLM decides to refuse
-        if refusal_phrase in response_text or "I don't know, here is who to ask:" in response_text:
-            return f"I don't know, here is who to ask: {refusal_contact}"
+    import time
+    max_retries = 3
+    retry_delay = 2.0
+    response_text = ""
+    
+    for attempt in range(max_retries):
+        try:
+            config = types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                temperature=0.0,
+                max_output_tokens=1024,
+            )
             
-        # Citation Validation Guardrail
-        is_valid, err_msg = validate_citations(response_text, retrieved_clauses, all_clauses_set)
-        if not is_valid:
-            print(f"Warning: Citation validation failed ({err_msg}). Falling back to safe refusal.")
+            response = client.models.generate_content(
+                model=model_name,
+                contents=user_prompt,
+                config=config
+            )
+            response_text = response.text.strip()
+            break
+        except Exception as e:
+            err_msg = str(e)
+            if "429" in err_msg or "quota" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
+                if attempt < max_retries - 1:
+                    wait_time = retry_delay * (2 ** attempt)
+                    print(f"\n[Warning: Rate limited (429). Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})]")
+                    time.sleep(wait_time)
+                    continue
+            print(f"Error during generation: {e}")
             return f"I don't know, here is who to ask: {refusal_contact}"
-            
-        return response_text
+    else:
+        if not response_text:
+            return f"I don't know, here is who to ask: {refusal_contact}"
 
-    except Exception as e:
-        print(f"Error during generation: {e}")
+    # Handle case where LLM decides to refuse
+    if refusal_phrase in response_text or "I don't know, here is who to ask:" in response_text:
         return f"I don't know, here is who to ask: {refusal_contact}"
+        
+    # Citation Validation Guardrail
+    is_valid, err_msg = validate_citations(response_text, retrieved_clauses, all_clauses_set)
+    if not is_valid:
+        print(f"Warning: Citation validation failed ({err_msg}). Falling back to safe refusal.")
+        return f"I don't know, here is who to ask: {refusal_contact}"
+        
+    return response_text
