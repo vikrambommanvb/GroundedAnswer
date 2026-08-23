@@ -178,7 +178,7 @@ def generate_grounded_answer(query, retrieved_clauses, all_clauses, refusal_cont
 
     if groq_api_key:
         import requests
-        model_name = os.environ.get("GROQ_MODEL", "llama-3.1-70b-versatile")
+        model_name = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {groq_api_key}",
