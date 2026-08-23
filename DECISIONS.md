@@ -92,3 +92,18 @@ Embeddings generated a high volume of API calls, leading to `429 RESOURCE_EXHAUS
 * **SQLite Relational DB**: Store versioned clauses in a database for robust SQL date-range queries.
 * **Local Embedding Models**: Use a lightweight sentence-transformer model locally for offline semantic search.
 * **Side-by-Side Version UI**: Develop a caseworker interface displaying historical changes side-by-side.
+
+## 9. Multi-API Support and Resiliency (Gemini & Groq)
+
+### Why Multi-API Support was Added
+To prevent rate-limit blockages and support high-speed evaluations, we added integration for the **Groq Cloud API** alongside Google's **Gemini API**. If a user sets `GROQ_API_KEY` in their `.env` file, the assistant automatically routes queries to Groq, providing fast, date-aware responses.
+
+### Zero-Dependency Request Structure
+The Groq API call is executed via standard Python `requests` (pre-installed in the virtual environment) pointing to the OpenAI-compatible chat completions endpoint (`https://api.groq.com/openai/v1/chat/completions`). This keeps the repository extremely clean and prevents version conflicts.
+
+### Exponential Backoff Retry Handler
+We wrapped both the Gemini and Groq API calls in a retry loop that detects `429` and `RESOURCE_EXHAUSTED` errors. The loop retries the call up to 3 times with exponential backoff delays (2.0s, 4.0s), making the CLI highly resilient under concurrent evaluations.
+
+### Model Routing
+* **Gemini**: Defaults to `gemini-1.5-flash`
+* **Groq**: Defaults to `openai/gpt-oss-20b` (an active, high-capacity open-source instruction-following model on Groq Cloud). Both are fully configurable via `.env` variables.

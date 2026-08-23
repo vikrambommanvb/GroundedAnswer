@@ -9,6 +9,7 @@ from generator import extract_citations, validate_citations, generate_grounded_a
 # Set up test environment
 os.environ["TOP_K"] = "5"
 os.environ["MIN_RELEVANCE_SCORE"] = "0.15"
+os.environ.pop("GROQ_API_KEY", None)
 
 # --- 1. Ingestion Tests ---
 
