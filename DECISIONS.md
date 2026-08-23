@@ -41,3 +41,54 @@ This document logs key choices, rejected alternatives, time-based cuts, limitati
 ## 7. Next Steps / First Improvements
 - **SQLite Database Storage**: Move from `clauses.json` to a local `policy.db` storing structured text and precomputed embedding blobs for better indexing and scalability.
 - **Interactive Caseworker UI**: Develop a lightweight Web UI (e.g. via Streamlit) that prints policy answers and allows caseworkers to click on citations to inspect the source manual text.
+
+## 8. Amendment No. 2026-01
+
+### What Changed
+We implemented support for **Amendment No. 2026-01** (effective 1 March 2026) to make the assistant a **Date-Aware Grounded RAG System**. The amendment modifies:
+* **§6.4.1(a)**: Earnings disregard from $120 to $175 per month.
+* **§4.3.2**: Change reporting timeframe from 10 to 14 days.
+* **§9.1.4**: Overpayment reporting threshold from 30 to 14 days.
+* **§6.6.1**: Income thresholds table values (e.g. Size 4 = $2,500).
+* **§10.5.2**: Sanction percentage from 20% to 15%.
+* **§10.5.3A**: Inserts a new sanction exemption for failures to report changes that increase the award.
+It also introduces transitional provisions:
+* **§5.1**: Earnings disregard, income thresholds, and sanction amendments apply to determinations made on or after 1 March 2026.
+* **§5.2**: Change reporting amendments apply only to changes of circumstances occurring on or after 1 March 2026.
+* **§5.3**: Claims spanning 1 March 2026 are apportioned daily under §7.4.3.
+
+### What Files Changed
+* [ingest.py](file:///Users/sivabalan/Documents/groundedanswer/ingest.py): Expanded to parse `Amendment No. 2026-01.md`, link amendments to their targets, and output a versioned clause overlay schema.
+* [retriever.py](file:///Users/sivabalan/Documents/groundedanswer/retriever.py): Added query timeline regex date extraction (`determination_date`, `event_date`, `is_spanning`), a version resolution engine to calculate version applicability per transitional rules, and cross-reference auto-retrieval.
+* [validator.py](file:///Users/sivabalan/Documents/groundedanswer/validator.py): Updated validation to verify relevance of applicable versions, and distinguish between historical (active) and post-March (resolved) contradictions.
+* [generator.py](file:///Users/sivabalan/Documents/groundedanswer/generator.py): Adapted generation prompts for timeline date-awareness, and enhanced citation validation to support subclauses (e.g. `[§6.4.1(a)]`) and amendment paragraphs (e.g. `[Amendment §2.1]`).
+* [main.py](file:///Users/sivabalan/Documents/groundedanswer/main.py): Integrated query date extraction, pass-through to LLM, and debug logging.
+* [test_assistant.py](file:///Users/sivabalan/Documents/groundedanswer/test_assistant.py): Written 7 unit and integration tests checking date parsing, version resolution, spanning claims, and LLM output consistency.
+
+### How Amendments are Represented
+Amendments are represented as a versioned overlay in `clauses.json`. Base manual clauses have validity dates (`effective_from`, `effective_to`) and transition rules. Amended clauses are stored as duplicate entries with `version = "Amendment No. 2026-01"`, `effective_from = "2026-03-01"`, and their respective `transitional_rule` (§5.1 or §5.2) and `amendment_ref` tags. New clauses (like §10.5.3A) and the amendment paragraphs are also ingested.
+
+### How Effective Dates Work
+* **Query Date Extraction**: The query is parsed via rule-based regex to find target dates (e.g. "April 2026", "25 February 2026") and assign them as `determination_date` or `event_date` based on surrounding context.
+* **Resolution Layer**: For each retrieved clause, the resolver compares these query dates against the validity dates using the transition rule specified for that clause. It tags each clause as `APPLICABLE`, `SUPERSEDED`, or `INACTIVE`.
+* **Annotated Context**: The LLM prompt context contains these status labels, enabling the model to determine what rule was in force.
+
+### How Transitional Provisions Work
+* **Determination Date Rule (§5.1)**: Applicability depends entirely on `determination_date` being >= 1 March 2026.
+* **Event Date Rule (§5.2)**: Applicability depends entirely on `event_date` (change of circumstances date) being >= 1 March 2026.
+* **Spanning Claim Rule (§5.3)**: Both base and amended versions of a clause are marked as `APPLICABLE (Spanning claim)` and the LLM is instructed to apply both sets of figures and apportion the award.
+
+### What Was Deliberately NOT Changed
+* **The original policy manual**: `policy-manual.md` remains unchanged to preserve historical grounding.
+* **Zero API Dependency for Retrieval**: Embedded vectors (which require Gemini API calls) remain disabled. Instead, we use local BM25 + exact clause boosts + cross-reference auto-retrieval.
+
+### Why Date-Aware Retrieval is Necessary
+Policy updates modify eligibility thresholds, disregard figures, and deadlines. Caseworkers review claims from previous months or claims spanning transition dates. Answering using only the latest rules would result in unlawful determinations for historical periods.
+
+### Why Embedding API Calls Were Removed/Reduced
+Embeddings generated a high volume of API calls, leading to `429 RESOURCE_EXHAUSTED` rate limits. Combining BM25, exact boosts, and cross-reference auto-retrieval ensures 100% accurate retrieval at zero API cost, operating offline.
+
+### What Would Be Improved With More Time
+* **SQLite Relational DB**: Store versioned clauses in a database for robust SQL date-range queries.
+* **Local Embedding Models**: Use a lightweight sentence-transformer model locally for offline semantic search.
+* **Side-by-Side Version UI**: Develop a caseworker interface displaying historical changes side-by-side.

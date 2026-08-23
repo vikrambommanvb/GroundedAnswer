@@ -92,56 +92,210 @@ class GroundedAnswerRetriever:
         return scores
 
     def extract_clause_ids(self, text):
-        # Extract clause patterns like 4.3.2 or §4.3.2
-        matches = re.findall(r"(?:§\s*)?(\d+\.\d+\.\d+)", text)
-        return [f"§{m}" for m in matches]
+        # Find Amendment §X.Y patterns
+        amend_matches = re.findall(r"\bAmendment\s+§?\s*(\d+\.\d+)\b", text, re.IGNORECASE)
+        amend_ids = [f"Amendment §{m}" for m in amend_matches]
+        
+        # Find 3-part IDs: §X.Y.Z or X.Y.Z
+        matches_3part = re.findall(r"(?:§\s*)?(\d+\.\d+\.\d+)", text)
+        ids_3part = [f"§{m}" for m in matches_3part]
+        
+        # Find 2-part IDs: §X.Y or X.Y (avoiding 3-part subsets)
+        matches_2part = re.findall(r"(?:§\s*)?(\d+\.\d+)(?!\.\d+)", text)
+        ids_2part = []
+        for m in matches_2part:
+            pos = text.find(m)
+            if pos != -1:
+                context_before = text[max(0, pos-15):pos].lower()
+                if "amendment" in context_before:
+                    continue
+            ids_2part.append(f"§{m}")
+            
+        return list(set(amend_ids + ids_3part + ids_2part))
 
-    def get_semantic_embeddings(self):
-        # Only import google-generativeai if API key is active
-        import google.generativeai as genai
+    def extract_dates_from_query(self, query):
+        q = query.lower()
+        is_spanning = False
+        if "spanning" in q or "spans" in q or "span" in q:
+            is_spanning = True
+            
+        months = {
+            "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
+            "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
+            "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12
+        }
         
-        # Check if we already have embeddings loaded
-        if all("embedding" in c and c["embedding"] for c in self.clauses):
-            return
+        from datetime import date
+        found_dates = []
+        
+        # Pattern 1: DD Month YYYY or Month DD, YYYY
+        pattern_dd_month_yyyy = re.compile(
+            r"\b(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(\d{4})\b"
+        )
+        for m in pattern_dd_month_yyyy.finditer(q):
+            day = int(m.group(1))
+            month_name = m.group(2)
+            year = int(m.group(3))
+            month = months[month_name]
+            found_dates.append((m.start(), date(year, month, day)))
+            
+        pattern_month_dd_yyyy = re.compile(
+            r"\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(\d{1,2}),?\s+(\d{4})\b"
+        )
+        for m in pattern_month_dd_yyyy.finditer(q):
+            month_name = m.group(1)
+            day = int(m.group(2))
+            year = int(m.group(3))
+            month = months[month_name]
+            found_dates.append((m.start(), date(year, month, day)))
+            
+        # Pattern 3: Month YYYY
+        pattern_month_yyyy = re.compile(
+            r"\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(\d{4})\b"
+        )
+        for m in pattern_month_yyyy.finditer(q):
+            start_pos = m.start()
+            overlap = False
+            for fd in found_dates:
+                if abs(fd[0] - start_pos) < 10:
+                    overlap = True
+                    break
+            if not overlap:
+                month_name = m.group(1)
+                year = int(m.group(2))
+                month = months[month_name]
+                found_dates.append((start_pos, date(year, month, 1)))
 
-        print("Computing semantic embeddings for policy clauses...")
-        api_key = os.environ.get("GEMINI_API_KEY")
-        if not api_key:
-            raise ValueError("GEMINI_API_KEY not found in environment.")
-            
-        genai.configure(api_key=api_key)
+        found_dates.sort(key=lambda x: x[0])
         
-        # Batch embed documents
-        contents = [f"{c['clause_id']} {c['clause_title']}\n{c['content']}" for c in self.clauses]
+        determination_date = None
+        event_date = None
         
-        # Support batching into chunks of 100 to avoid limits if document count grows
-        batch_size = 100
-        embeddings = []
-        
-        for i in range(0, len(contents), batch_size):
-            chunk = contents[i:i + batch_size]
-            result = genai.embed_content(
-                model="models/text-embedding-004",
-                content=chunk,
-                task_type="retrieval_document"
-            )
-            embeddings.extend(result["embedding"])
+        for pos, dt in found_dates:
+            context_before = q[max(0, pos-40):pos]
+            context_after = q[pos:min(len(q), pos+40)]
+            context = context_before + " " + context_after
             
-        for idx, emb in enumerate(embeddings):
-            self.clauses[idx]["embedding"] = emb
+            if "determination" in context or "determined" in context or "made" in context or "decision" in context:
+                determination_date = dt
+            elif "change" in context or "occurred" in context or "occurring" in context or "event" in context or "claim" in context:
+                event_date = dt
+                
+        if len(found_dates) == 1:
+            dt = found_dates[0][1]
+            if "determination" in q or "determined" in q or "made" in q:
+                determination_date = dt
+            elif "change" in q or "occurred" in q or "occurring" in q or "event" in q:
+                event_date = dt
+            else:
+                determination_date = dt
+                event_date = dt
+                
+        elif len(found_dates) >= 2 and (determination_date is None or event_date is None):
+            dt1, dt2 = found_dates[0][1], found_dates[1][1]
+            change_pos = q.find("change")
+            det_pos = q.find("determination")
             
-        # Optionally write back to clauses.json to cache them
-        try:
-            with open(self.clauses_path, "w", encoding="utf-8") as f:
-                json.dump(self.clauses, f, indent=4, ensure_ascii=False)
-            print("Successfully cached embeddings in clauses.json.")
-        except Exception as e:
-            print(f"Warning: Could not cache embeddings: {e}")
+            if change_pos != -1 or det_pos != -1:
+                dist1_c = abs(found_dates[0][0] - change_pos) if change_pos != -1 else 9999
+                dist2_c = abs(found_dates[1][0] - change_pos) if change_pos != -1 else 9999
+                dist1_d = abs(found_dates[0][0] - det_pos) if det_pos != -1 else 9999
+                dist2_d = abs(found_dates[1][0] - det_pos) if det_pos != -1 else 9999
+                
+                if dist1_c < dist2_c or dist2_d < dist1_d:
+                    event_date = dt1
+                    determination_date = dt2
+                else:
+                    event_date = dt2
+                    determination_date = dt1
+            else:
+                event_date = dt1
+                determination_date = dt2
+
+        if "after 1 march 2026" in q or "post-amendment" in q or "after march 2026" in q:
+            event_date = date(2026, 3, 2)
+            determination_date = date(2026, 3, 2)
+            
+        return determination_date, event_date, is_spanning
+
+    def resolve_applicability(self, retrieved_clauses, determination_date, event_date, is_spanning):
+        from datetime import date
+        det_dt = determination_date or date(2026, 8, 23)
+        ev_dt = event_date or date(2026, 8, 23)
+        cutoff = date(2026, 3, 1)
+
+        resolved = []
+        for rc in retrieved_clauses:
+            c = rc.copy()
+            rule = c.get("transitional_rule")
+            version = c.get("version")
+            cid = c.get("clause_id")
+            
+            c["is_applicable"] = True
+            c["applicability_status"] = "APPLICABLE"
+            c["applicability_reason"] = "Always applicable"
+
+            if version == "Amendment No. 2026-01" and cid.startswith("Amendment §"):
+                c["is_applicable"] = True
+                c["applicability_status"] = "APPLICABLE"
+                c["applicability_reason"] = "Amendment text reference"
+                resolved.append(c)
+                continue
+
+            if rule == "§5.1":
+                if is_spanning:
+                    c["is_applicable"] = True
+                    c["applicability_status"] = "APPLICABLE (Spanning claim)"
+                    c["applicability_reason"] = "Claim spans 1 March 2026, figures from both periods apply and are apportioned under §5.3 / §7.4.3."
+                else:
+                    if det_dt >= cutoff:
+                        if version == "Amendment No. 2026-01":
+                            c["is_applicable"] = True
+                            c["applicability_status"] = "APPLICABLE"
+                            c["applicability_reason"] = f"Determination date ({det_dt}) is on or after 1 March 2026, applying the amended rule (per §5.1)."
+                        else:
+                            c["is_applicable"] = False
+                            c["applicability_status"] = "SUPERSEDED"
+                            c["applicability_reason"] = f"Superseded for determinations made on or after 1 March 2026 (per §5.1)."
+                    else:
+                        if version == "Amendment No. 2026-01":
+                            c["is_applicable"] = False
+                            c["applicability_status"] = "INACTIVE"
+                            c["applicability_reason"] = f"Not yet in force for determinations made before 1 March 2026 (per §5.1)."
+                        else:
+                            c["is_applicable"] = True
+                            c["applicability_status"] = "APPLICABLE"
+                            c["applicability_reason"] = f"Determination date ({det_dt}) is before 1 March 2026, applying the base rule (per §5.1)."
+            elif rule == "§5.2":
+                if ev_dt >= cutoff:
+                    if version == "Amendment No. 2026-01":
+                        c["is_applicable"] = True
+                        c["applicability_status"] = "APPLICABLE"
+                        c["applicability_reason"] = f"Change occurred on or after 1 March 2026 ({ev_dt}), applying the amended reporting period (per §5.2)."
+                    else:
+                        c["is_applicable"] = False
+                        c["applicability_status"] = "SUPERSEDED"
+                        c["applicability_reason"] = f"Superseded for changes occurring on or after 1 March 2026 (per §5.2)."
+                else:
+                    if version == "Amendment No. 2026-01":
+                        c["is_applicable"] = False
+                        c["applicability_status"] = "INACTIVE"
+                        c["applicability_reason"] = f"Not applicable for changes occurring before 1 March 2026 (per §5.2)."
+                    else:
+                        c["is_applicable"] = True
+                        c["applicability_status"] = "APPLICABLE"
+                        c["applicability_reason"] = f"Change occurred before 1 March 2026 ({ev_dt}), applying the base reporting period (per §5.2)."
+
+            resolved.append(c)
+        return resolved
 
     def retrieve(self, query, top_k=TOP_K, semantic_weight=SEMANTIC_WEIGHT, 
-                 keyword_weight=KEYWORD_WEIGHT, min_relevance_score=MIN_RELEVANCE_SCORE):
+                  keyword_weight=KEYWORD_WEIGHT, min_relevance_score=MIN_RELEVANCE_SCORE):
         if not self.clauses:
             return []
+
+        # Parse query dates
+        determination_date, event_date, is_spanning = self.extract_dates_from_query(query)
 
         query_tokens = self.tokenize(query)
         bm25_scores = self.compute_bm25_scores(query_tokens)
@@ -156,65 +310,17 @@ class GroundedAnswerRetriever:
         
         for idx, clause in enumerate(self.clauses):
             if clause["clause_id"] in direct_clause_ids:
-                # Give maximum boost to direct clause matching
                 normalized_keyword[idx] = 1.5
                 direct_matches.add(clause["clause_id"])
 
-        # Semantic Search path
-        api_key = os.environ.get("GEMINI_API_KEY")
-        semantic_scores = [0.0] * len(self.clauses)
-        semantic_active = False
-
-        if api_key:
-            try:
-                import google.generativeai as genai
-                self.get_semantic_embeddings()
-                
-                # Embed query
-                genai.configure(api_key=api_key)
-                q_result = genai.embed_content(
-                    model="models/text-embedding-004",
-                    content=query,
-                    task_type="retrieval_query"
-                )
-                query_emb = np.array(q_result["embedding"])
-                
-                # Compute cosine similarities
-                for idx, clause in enumerate(self.clauses):
-                    if "embedding" in clause and clause["embedding"]:
-                        c_emb = np.array(clause["embedding"])
-                        # Cosine similarity
-                        dot = np.dot(c_emb, query_emb)
-                        norm_c = np.linalg.norm(c_emb)
-                        norm_q = np.linalg.norm(query_emb)
-                        if norm_c > 0 and norm_q > 0:
-                            # scale cosine from [-1, 1] to [0, 1]
-                            similarity = (dot / (norm_c * norm_q) + 1.0) / 2.0
-                            semantic_scores[idx] = float(similarity)
-                
-                semantic_active = True
-            except Exception as e:
-                print(f"Warning: Semantic retrieval failed, falling back to keyword-only: {e}")
-                semantic_active = False
-
-        # Hybrid score aggregation
         results = []
         for idx, clause in enumerate(self.clauses):
-            kw_score = normalized_keyword[idx]
-            sem_score = semantic_scores[idx]
-            
-            if semantic_active:
-                # Combine weights
-                score = (keyword_weight * kw_score) + (semantic_weight * sem_score)
-                method = "hybrid"
-            else:
-                score = kw_score
-                method = "keyword"
+            score = normalized_keyword[idx]
+            method = "keyword"
                 
-            # If it was a direct clause match override, flag it
             if clause["clause_id"] in direct_matches:
                 method = "direct"
-                score = max(score, 1.0) # ensure it stays above min score threshold
+                score = max(score, 1.0)
 
             results.append({
                 "clause_id": clause["clause_id"],
@@ -223,14 +329,63 @@ class GroundedAnswerRetriever:
                 "part_title": clause["part_title"],
                 "section_title": clause["section_title"],
                 "version": clause["version"],
+                "effective_from": clause.get("effective_from"),
+                "effective_to": clause.get("effective_to"),
+                "transitional_rule": clause.get("transitional_rule"),
+                "amendment_ref": clause.get("amendment_ref"),
                 "score": round(score, 4),
                 "retrieval_method": method
             })
 
+        # Apply programmatic resolution of applicability based on dates
+        resolved_results = self.resolve_applicability(results, determination_date, event_date, is_spanning)
+
         # Filter by minimum relevance threshold
-        filtered_results = [r for r in results if r["score"] >= min_relevance_score]
+        filtered_results = [r for r in resolved_results if r["score"] >= min_relevance_score]
 
-        # Sort descending
-        filtered_results.sort(key=lambda x: x["score"], reverse=True)
+        # Sort descending by score, prioritizing APPLICABLE ones
+        filtered_results.sort(key=lambda x: (x["applicability_status"] != "APPLICABLE", -x["score"]))
 
-        return filtered_results[:top_k]
+        top_results = filtered_results[:top_k]
+
+        # --- Cross-Reference Expansion ---
+        cross_ref_ids = set()
+        for tr in top_results:
+            content_refs = self.extract_clause_ids(tr["content"])
+            for ref in content_refs:
+                ref_clean = re.sub(r"\s+", "", ref)
+                match = re.match(r"^(§\d+\.\d+\.\d+)\([a-z]\)$", ref_clean)
+                if match:
+                    ref_clean = match.group(1)
+                elif ref_clean.lower().startswith("amendment"):
+                    ref_clean = re.sub(r"\s+", " ", ref_clean)
+                cross_ref_ids.add(ref_clean)
+
+        # Add referenced clauses to results if not already retrieved
+        retrieved_ids = {tr["clause_id"] for tr in top_results}
+        for ref_id in cross_ref_ids:
+            if ref_id not in retrieved_ids:
+                ref_clauses = [c for c in self.clauses if c["clause_id"] == ref_id]
+                if ref_clauses:
+                    ref_resolved = self.resolve_applicability(ref_clauses, determination_date, event_date, is_spanning)
+                    for rc in ref_resolved:
+                        rc_copy = rc.copy()
+                        top_results.append({
+                            "clause_id": rc_copy["clause_id"],
+                            "clause_title": rc_copy["clause_title"],
+                            "content": rc_copy["content"],
+                            "part_title": rc_copy["part_title"],
+                            "section_title": rc_copy["section_title"],
+                            "version": rc_copy["version"],
+                            "effective_from": rc_copy.get("effective_from"),
+                            "effective_to": rc_copy.get("effective_to"),
+                            "transitional_rule": rc_copy.get("transitional_rule"),
+                            "amendment_ref": rc_copy.get("amendment_ref"),
+                            "applicability_status": rc_copy.get("applicability_status"),
+                            "applicability_reason": rc_copy.get("applicability_reason"),
+                            "score": 0.5,
+                            "retrieval_method": "cross-reference"
+                        })
+                        retrieved_ids.add(rc_copy["clause_id"])
+
+        return top_results

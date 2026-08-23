@@ -55,8 +55,15 @@ def validate_evidence(query, clauses, min_relevance_score=0.15):
         contact = FALLBACK_CONTACT
         return False, "No relevant policy clauses found.", f"I don't know, here is who to ask: {contact}"
 
-    # 4. Check if the top relevance score is too low
-    top_score = clauses[0].get("score", 0.0)
+    # 4. Check if the top applicable relevance score is too low
+    applicable_clauses = [c for c in clauses if c.get("applicability_status") == "APPLICABLE"]
+    top_score = applicable_clauses[0].get("score", 0.0) if applicable_clauses else 0.0
+    
+    # If no applicable clauses, but we have spanning or reference ones that are applicable
+    spanning_clauses = [c for c in clauses if "APPLICABLE" in c.get("applicability_status", "")]
+    if not applicable_clauses and spanning_clauses:
+        top_score = spanning_clauses[0].get("score", 0.0)
+
     if top_score < min_relevance_score:
         contact = FALLBACK_CONTACT
         return False, f"Relevance score ({top_score}) is below threshold ({min_relevance_score}).", f"I don't know, here is who to ask: {contact}"

@@ -44,15 +44,23 @@ def main():
 
     # 2. Retrieve relevant clauses
     try:
+        det_dt, ev_dt, is_spanning = retriever.extract_dates_from_query(query)
+        query_dates = {
+            "determination_date": det_dt,
+            "event_date": ev_dt,
+            "is_spanning": is_spanning
+        }
         retrieved_clauses = retriever.retrieve(query)
     except Exception as e:
         print(f"Error during retrieval: {e}")
         sys.exit(1)
 
     if args.debug:
+        print(f"[DEBUG] Timeline Context - Determination: {det_dt}, Event/Change: {ev_dt}, Spanning: {is_spanning}")
         print(f"[DEBUG] Retrieved {len(retrieved_clauses)} candidate clauses:")
         for idx, rc in enumerate(retrieved_clauses):
-            print(f"  {idx+1}. {rc['clause_id']} (Score: {rc['score']}, Method: {rc['retrieval_method']})")
+            status = rc.get('applicability_status', 'APPLICABLE')
+            print(f"  {idx+1}. {rc['clause_id']} (Score: {rc['score']}, Method: {rc['retrieval_method']}, Status: {status})")
 
     # 3. Validate evidence programmatically
     is_answerable, reason, refusal_msg = validate_evidence(query, retrieved_clauses)
@@ -76,7 +84,8 @@ def main():
             query=query,
             retrieved_clauses=retrieved_clauses,
             all_clauses=retriever.clauses,
-            refusal_contact=contact
+            refusal_contact=contact,
+            query_dates=query_dates
         )
         print(answer)
     except MissingAPIKeyError as e:

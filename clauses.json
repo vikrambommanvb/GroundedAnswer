@@ -6,7 +6,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.1 Purpose of the Program",
         "version": "31 December 2025",
-        "source_order": 1
+        "source_order": 1,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.1.2",
@@ -15,7 +19,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.1 Purpose of the Program",
         "version": "31 December 2025",
-        "source_order": 2
+        "source_order": 2,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.1.3",
@@ -24,7 +32,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.1 Purpose of the Program",
         "version": "31 December 2025",
-        "source_order": 3
+        "source_order": 3,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.2.1",
@@ -33,7 +45,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.2 Structure of this manual",
         "version": "31 December 2025",
-        "source_order": 4
+        "source_order": 4,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.2.2",
@@ -42,7 +58,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.2 Structure of this manual",
         "version": "31 December 2025",
-        "source_order": 5
+        "source_order": 5,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.2.3",
@@ -51,7 +71,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.2 Structure of this manual",
         "version": "31 December 2025",
-        "source_order": 6
+        "source_order": 6,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.3.1",
@@ -60,7 +84,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.3 Interpretation",
         "version": "31 December 2025",
-        "source_order": 7
+        "source_order": 7,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.3.2",
@@ -69,7 +97,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.3 Interpretation",
         "version": "31 December 2025",
-        "source_order": 8
+        "source_order": 8,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.3.3",
@@ -78,7 +110,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.3 Interpretation",
         "version": "31 December 2025",
-        "source_order": 9
+        "source_order": 9,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.1",
@@ -87,7 +123,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 10
+        "source_order": 10,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.2",
@@ -96,7 +136,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 11
+        "source_order": 11,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.3",
@@ -105,7 +149,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 12
+        "source_order": 12,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.4",
@@ -114,7 +162,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 13
+        "source_order": 13,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.5",
@@ -123,7 +175,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 14
+        "source_order": 14,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.6",
@@ -132,7 +188,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 15
+        "source_order": 15,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.7",
@@ -141,7 +201,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 16
+        "source_order": 16,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.8",
@@ -150,7 +214,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 17
+        "source_order": 17,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.9",
@@ -159,7 +227,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 18
+        "source_order": 18,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.10",
@@ -168,7 +240,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 19
+        "source_order": 19,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§1.4.11",
@@ -177,7 +253,11 @@
         "part_title": "Part 1 — Scope and Definitions",
         "section_title": "1.4 Definitions",
         "version": "31 December 2025",
-        "source_order": 20
+        "source_order": 20,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.1.1",
@@ -186,7 +266,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.1 The basic conditions",
         "version": "31 December 2025",
-        "source_order": 21
+        "source_order": 21,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.1.2",
@@ -195,7 +279,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.1 The basic conditions",
         "version": "31 December 2025",
-        "source_order": 22
+        "source_order": 22,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.1.3",
@@ -204,7 +292,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.1 The basic conditions",
         "version": "31 December 2025",
-        "source_order": 23
+        "source_order": 23,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.2.1",
@@ -213,7 +305,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.2 Continuing eligibility",
         "version": "31 December 2025",
-        "source_order": 24
+        "source_order": 24,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.2.2",
@@ -222,7 +318,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.2 Continuing eligibility",
         "version": "31 December 2025",
-        "source_order": 25
+        "source_order": 25,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.3.1",
@@ -231,7 +331,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.3 Applicants under 18",
         "version": "31 December 2025",
-        "source_order": 26
+        "source_order": 26,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.3.2",
@@ -240,7 +344,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.3 Applicants under 18",
         "version": "31 December 2025",
-        "source_order": 27
+        "source_order": 27,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.4.1",
@@ -249,7 +357,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.4 Resources",
         "version": "31 December 2025",
-        "source_order": 28
+        "source_order": 28,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.4.2",
@@ -258,7 +370,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.4 Resources",
         "version": "31 December 2025",
-        "source_order": 29
+        "source_order": 29,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§2.4.3",
@@ -267,7 +383,11 @@
         "part_title": "Part 2 — General Conditions of Eligibility",
         "section_title": "2.4 Resources",
         "version": "31 December 2025",
-        "source_order": 30
+        "source_order": 30,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.1.1",
@@ -276,7 +396,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.1 The residence condition",
         "version": "31 December 2025",
-        "source_order": 31
+        "source_order": 31,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.1.2",
@@ -285,7 +409,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.1 The residence condition",
         "version": "31 December 2025",
-        "source_order": 32
+        "source_order": 32,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.1.3",
@@ -294,7 +422,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.1 The residence condition",
         "version": "31 December 2025",
-        "source_order": 33
+        "source_order": 33,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.2.1",
@@ -303,7 +435,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.2 Temporary absence from the County",
         "version": "31 December 2025",
-        "source_order": 34
+        "source_order": 34,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.2.2",
@@ -312,7 +448,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.2 Temporary absence from the County",
         "version": "31 December 2025",
-        "source_order": 35
+        "source_order": 35,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.2.3",
@@ -321,7 +461,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.2 Temporary absence from the County",
         "version": "31 December 2025",
-        "source_order": 36
+        "source_order": 36,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.2.4",
@@ -330,7 +474,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.2 Temporary absence from the County",
         "version": "31 December 2025",
-        "source_order": 37
+        "source_order": 37,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.3.1",
@@ -339,7 +487,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.3 Applicants with no fixed address",
         "version": "31 December 2025",
-        "source_order": 38
+        "source_order": 38,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§3.3.2",
@@ -348,7 +500,11 @@
         "part_title": "Part 3 — Residence",
         "section_title": "3.3 Applicants with no fixed address",
         "version": "31 December 2025",
-        "source_order": 39
+        "source_order": 39,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.1.1",
@@ -357,7 +513,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.1 Excluded persons",
         "version": "31 December 2025",
-        "source_order": 40
+        "source_order": 40,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.1.2",
@@ -366,7 +526,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.1 Excluded persons",
         "version": "31 December 2025",
-        "source_order": 41
+        "source_order": 41,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.2.1",
@@ -375,7 +539,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.2 Persons in residential care",
         "version": "31 December 2025",
-        "source_order": 42
+        "source_order": 42,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.2.2",
@@ -384,7 +552,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.2 Persons in residential care",
         "version": "31 December 2025",
-        "source_order": 43
+        "source_order": 43,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.3.1",
@@ -393,7 +565,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.3 Recipient obligations",
         "version": "31 December 2025",
-        "source_order": 44
+        "source_order": 44,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.3.2",
@@ -402,7 +578,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.3 Recipient obligations",
         "version": "31 December 2025",
-        "source_order": 45
+        "source_order": 45,
+        "effective_from": "2025-12-31",
+        "effective_to": "2026-03-01",
+        "transitional_rule": "§5.2",
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.3.3",
@@ -411,7 +591,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.3 Recipient obligations",
         "version": "31 December 2025",
-        "source_order": 46
+        "source_order": 46,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§4.3.4",
@@ -420,7 +604,11 @@
         "part_title": "Part 4 — Exclusions",
         "section_title": "4.3 Recipient obligations",
         "version": "31 December 2025",
-        "source_order": 47
+        "source_order": 47,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.1.1",
@@ -429,7 +617,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.1 Households including a person in residential care",
         "version": "31 December 2025",
-        "source_order": 48
+        "source_order": 48,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.1.2",
@@ -438,7 +630,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.1 Households including a person in residential care",
         "version": "31 December 2025",
-        "source_order": 49
+        "source_order": 49,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.2.1",
@@ -447,7 +643,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.2 Households including a temporarily absent member",
         "version": "31 December 2025",
-        "source_order": 50
+        "source_order": 50,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.2.2",
@@ -456,7 +656,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.2 Households including a temporarily absent member",
         "version": "31 December 2025",
-        "source_order": 51
+        "source_order": 51,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.2.3",
@@ -465,7 +669,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.2 Households including a temporarily absent member",
         "version": "31 December 2025",
-        "source_order": 52
+        "source_order": 52,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.3.1",
@@ -474,7 +682,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.3 Households including a person receiving a training allowance",
         "version": "31 December 2025",
-        "source_order": 53
+        "source_order": 53,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.3.2",
@@ -483,7 +695,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.3 Households including a person receiving a training allowance",
         "version": "31 December 2025",
-        "source_order": 54
+        "source_order": 54,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.4.1",
@@ -492,7 +708,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.4 Households including a person in receipt of a care allowance",
         "version": "31 December 2025",
-        "source_order": 55
+        "source_order": 55,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.4.2",
@@ -501,7 +721,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.4 Households including a person in receipt of a care allowance",
         "version": "31 December 2025",
-        "source_order": 56
+        "source_order": 56,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.5.1",
@@ -510,7 +734,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.5 Households with a member subject to immigration conditions",
         "version": "31 December 2025",
-        "source_order": 57
+        "source_order": 57,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§5.5.2",
@@ -519,7 +747,11 @@
         "part_title": "Part 5 — Special Household Circumstances",
         "section_title": "5.5 Households with a member subject to immigration conditions",
         "version": "31 December 2025",
-        "source_order": 58
+        "source_order": 58,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.1.1",
@@ -528,7 +760,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.1 General",
         "version": "31 December 2025",
-        "source_order": 59
+        "source_order": 59,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.1.2",
@@ -537,7 +773,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.1 General",
         "version": "31 December 2025",
-        "source_order": 60
+        "source_order": 60,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.2.1",
@@ -546,7 +786,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.2 Income that is counted",
         "version": "31 December 2025",
-        "source_order": 61
+        "source_order": 61,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.3.1",
@@ -555,7 +799,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.3 Irregular and lump-sum income",
         "version": "31 December 2025",
-        "source_order": 62
+        "source_order": 62,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.3.2",
@@ -564,7 +812,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.3 Irregular and lump-sum income",
         "version": "31 December 2025",
-        "source_order": 63
+        "source_order": 63,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.3.3",
@@ -573,7 +825,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.3 Irregular and lump-sum income",
         "version": "31 December 2025",
-        "source_order": 64
+        "source_order": 64,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.4.1",
@@ -582,7 +838,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.4 Disregards",
         "version": "31 December 2025",
-        "source_order": 65
+        "source_order": 65,
+        "effective_from": "2025-12-31",
+        "effective_to": "2026-03-01",
+        "transitional_rule": "§5.1",
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.4.2",
@@ -591,7 +851,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.4 Disregards",
         "version": "31 December 2025",
-        "source_order": 66
+        "source_order": 66,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.5.1",
@@ -600,7 +864,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.5 Self-employment",
         "version": "31 December 2025",
-        "source_order": 67
+        "source_order": 67,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.5.2",
@@ -609,7 +877,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.5 Self-employment",
         "version": "31 December 2025",
-        "source_order": 68
+        "source_order": 68,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.5.3",
@@ -618,7 +890,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.5 Self-employment",
         "version": "31 December 2025",
-        "source_order": 69
+        "source_order": 69,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§6.6.1",
@@ -627,7 +903,11 @@
         "part_title": "Part 6 — Income",
         "section_title": "6.6 Income thresholds",
         "version": "31 December 2025",
-        "source_order": 70
+        "source_order": 70,
+        "effective_from": "2025-12-31",
+        "effective_to": "2026-03-01",
+        "transitional_rule": "§5.1",
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.1.1",
@@ -636,7 +916,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.1 The award",
         "version": "31 December 2025",
-        "source_order": 71
+        "source_order": 71,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.1.2",
@@ -645,7 +929,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.1 The award",
         "version": "31 December 2025",
-        "source_order": 72
+        "source_order": 72,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.1.3",
@@ -654,7 +942,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.1 The award",
         "version": "31 December 2025",
-        "source_order": 73
+        "source_order": 73,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.2.1",
@@ -663,7 +955,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.2 Needs figures",
         "version": "31 December 2025",
-        "source_order": 74
+        "source_order": 74,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.2.2",
@@ -672,7 +968,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.2 Needs figures",
         "version": "31 December 2025",
-        "source_order": 75
+        "source_order": 75,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.3.1",
@@ -681,7 +981,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.3 Adjustments",
         "version": "31 December 2025",
-        "source_order": 76
+        "source_order": 76,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.3.2",
@@ -690,7 +994,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.3 Adjustments",
         "version": "31 December 2025",
-        "source_order": 77
+        "source_order": 77,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.3.3",
@@ -699,7 +1007,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.3 Adjustments",
         "version": "31 December 2025",
-        "source_order": 78
+        "source_order": 78,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.4.1",
@@ -708,7 +1020,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.4 Payment",
         "version": "31 December 2025",
-        "source_order": 79
+        "source_order": 79,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.4.2",
@@ -717,7 +1033,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.4 Payment",
         "version": "31 December 2025",
-        "source_order": 80
+        "source_order": 80,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§7.4.3",
@@ -726,7 +1046,11 @@
         "part_title": "Part 7 — Calculation of the Award",
         "section_title": "7.4 Payment",
         "version": "31 December 2025",
-        "source_order": 81
+        "source_order": 81,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.1.1",
@@ -735,7 +1059,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.1 Making an application",
         "version": "31 December 2025",
-        "source_order": 82
+        "source_order": 82,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.1.2",
@@ -744,7 +1072,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.1 Making an application",
         "version": "31 December 2025",
-        "source_order": 83
+        "source_order": 83,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.1.3",
@@ -753,7 +1085,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.1 Making an application",
         "version": "31 December 2025",
-        "source_order": 84
+        "source_order": 84,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.2.1",
@@ -762,7 +1098,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.2 Evidence",
         "version": "31 December 2025",
-        "source_order": 85
+        "source_order": 85,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.2.2",
@@ -771,7 +1111,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.2 Evidence",
         "version": "31 December 2025",
-        "source_order": 86
+        "source_order": 86,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.2.3",
@@ -780,7 +1124,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.2 Evidence",
         "version": "31 December 2025",
-        "source_order": 87
+        "source_order": 87,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.3.1",
@@ -789,7 +1137,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.3 Time limits for determination",
         "version": "31 December 2025",
-        "source_order": 88
+        "source_order": 88,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.3.2",
@@ -798,7 +1150,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.3 Time limits for determination",
         "version": "31 December 2025",
-        "source_order": 89
+        "source_order": 89,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.3.3",
@@ -807,7 +1163,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.3 Time limits for determination",
         "version": "31 December 2025",
-        "source_order": 90
+        "source_order": 90,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.4.1",
@@ -816,7 +1176,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.4 Interim payments",
         "version": "31 December 2025",
-        "source_order": 91
+        "source_order": 91,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.4.2",
@@ -825,7 +1189,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.4 Interim payments",
         "version": "31 December 2025",
-        "source_order": 92
+        "source_order": 92,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.5.1",
@@ -834,7 +1202,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.5 Interviews",
         "version": "31 December 2025",
-        "source_order": 93
+        "source_order": 93,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.5.2",
@@ -843,7 +1215,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.5 Interviews",
         "version": "31 December 2025",
-        "source_order": 94
+        "source_order": 94,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.5.3",
@@ -852,7 +1228,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.5 Interviews",
         "version": "31 December 2025",
-        "source_order": 95
+        "source_order": 95,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.6.1",
@@ -861,7 +1241,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.6 Failure to respond",
         "version": "31 December 2025",
-        "source_order": 96
+        "source_order": 96,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.6.2",
@@ -870,7 +1254,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.6 Failure to respond",
         "version": "31 December 2025",
-        "source_order": 97
+        "source_order": 97,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.6.3",
@@ -879,7 +1267,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.6 Failure to respond",
         "version": "31 December 2025",
-        "source_order": 98
+        "source_order": 98,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.7.1",
@@ -888,7 +1280,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.7 Notification of determinations",
         "version": "31 December 2025",
-        "source_order": 99
+        "source_order": 99,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§8.7.2",
@@ -897,7 +1293,11 @@
         "part_title": "Part 8 — Applications and Determinations",
         "section_title": "8.7 Notification of determinations",
         "version": "31 December 2025",
-        "source_order": 100
+        "source_order": 100,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.1.1",
@@ -906,7 +1306,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.1 Establishing an overpayment",
         "version": "31 December 2025",
-        "source_order": 101
+        "source_order": 101,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.1.2",
@@ -915,7 +1319,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.1 Establishing an overpayment",
         "version": "31 December 2025",
-        "source_order": 102
+        "source_order": 102,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.1.3",
@@ -924,7 +1332,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.1 Establishing an overpayment",
         "version": "31 December 2025",
-        "source_order": 103
+        "source_order": 103,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.1.4",
@@ -933,7 +1345,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.1 Establishing an overpayment",
         "version": "31 December 2025",
-        "source_order": 104
+        "source_order": 104,
+        "effective_from": "2025-12-31",
+        "effective_to": "2026-03-01",
+        "transitional_rule": "§5.2",
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.1.5",
@@ -942,7 +1358,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.1 Establishing an overpayment",
         "version": "31 December 2025",
-        "source_order": 105
+        "source_order": 105,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.2.1",
@@ -951,7 +1371,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.2 Amount recoverable",
         "version": "31 December 2025",
-        "source_order": 106
+        "source_order": 106,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.2.2",
@@ -960,7 +1384,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.2 Amount recoverable",
         "version": "31 December 2025",
-        "source_order": 107
+        "source_order": 107,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.3.1",
@@ -969,7 +1397,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.3 Recovery",
         "version": "31 December 2025",
-        "source_order": 108
+        "source_order": 108,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.3.2",
@@ -978,7 +1410,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.3 Recovery",
         "version": "31 December 2025",
-        "source_order": 109
+        "source_order": 109,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.3.3",
@@ -987,7 +1423,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.3 Recovery",
         "version": "31 December 2025",
-        "source_order": 110
+        "source_order": 110,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.4.1",
@@ -996,7 +1436,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.4 Waiver",
         "version": "31 December 2025",
-        "source_order": 111
+        "source_order": 111,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.4.2",
@@ -1005,7 +1449,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.4 Waiver",
         "version": "31 December 2025",
-        "source_order": 112
+        "source_order": 112,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.5.1",
@@ -1014,7 +1462,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.5 Time limits",
         "version": "31 December 2025",
-        "source_order": 113
+        "source_order": 113,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.5.2",
@@ -1023,7 +1475,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.5 Time limits",
         "version": "31 December 2025",
-        "source_order": 114
+        "source_order": 114,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.6.1",
@@ -1032,7 +1488,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.6 Deliberate misrepresentation",
         "version": "31 December 2025",
-        "source_order": 115
+        "source_order": 115,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§9.6.2",
@@ -1041,7 +1501,11 @@
         "part_title": "Part 9 — Overpayments and Recovery",
         "section_title": "9.6 Deliberate misrepresentation",
         "version": "31 December 2025",
-        "source_order": 116
+        "source_order": 116,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.1.1",
@@ -1050,7 +1514,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.1 Termination",
         "version": "31 December 2025",
-        "source_order": 117
+        "source_order": 117,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.1.2",
@@ -1059,7 +1527,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.1 Termination",
         "version": "31 December 2025",
-        "source_order": 118
+        "source_order": 118,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.2.1",
@@ -1068,7 +1540,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.2 Suspension",
         "version": "31 December 2025",
-        "source_order": 119
+        "source_order": 119,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.2.2",
@@ -1077,7 +1553,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.2 Suspension",
         "version": "31 December 2025",
-        "source_order": 120
+        "source_order": 120,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.2.3",
@@ -1086,7 +1566,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.2 Suspension",
         "version": "31 December 2025",
-        "source_order": 121
+        "source_order": 121,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.2.4",
@@ -1095,7 +1579,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.2 Suspension",
         "version": "31 December 2025",
-        "source_order": 122
+        "source_order": 122,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.3.1",
@@ -1104,7 +1592,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.3 Reinstatement",
         "version": "31 December 2025",
-        "source_order": 123
+        "source_order": 123,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.3.2",
@@ -1113,7 +1605,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.3 Reinstatement",
         "version": "31 December 2025",
-        "source_order": 124
+        "source_order": 124,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.4.1",
@@ -1122,7 +1618,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.4 Effect on the household",
         "version": "31 December 2025",
-        "source_order": 125
+        "source_order": 125,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.5.1",
@@ -1131,7 +1631,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.5 Sanctions",
         "version": "31 December 2025",
-        "source_order": 126
+        "source_order": 126,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.5.2",
@@ -1140,7 +1644,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.5 Sanctions",
         "version": "31 December 2025",
-        "source_order": 127
+        "source_order": 127,
+        "effective_from": "2025-12-31",
+        "effective_to": "2026-03-01",
+        "transitional_rule": "§5.1",
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.5.3",
@@ -1149,7 +1657,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.5 Sanctions",
         "version": "31 December 2025",
-        "source_order": 128
+        "source_order": 128,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§10.5.4",
@@ -1158,7 +1670,11 @@
         "part_title": "Part 10 — Suspension, Termination and Sanctions",
         "section_title": "10.5 Sanctions",
         "version": "31 December 2025",
-        "source_order": 129
+        "source_order": 129,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.1.1",
@@ -1167,7 +1683,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.1 Right to review",
         "version": "31 December 2025",
-        "source_order": 130
+        "source_order": 130,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.1.2",
@@ -1176,7 +1696,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.1 Right to review",
         "version": "31 December 2025",
-        "source_order": 131
+        "source_order": 131,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.1.3",
@@ -1185,7 +1709,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.1 Right to review",
         "version": "31 December 2025",
-        "source_order": 132
+        "source_order": 132,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.2.1",
@@ -1194,7 +1722,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.2 Conduct of the review",
         "version": "31 December 2025",
-        "source_order": 133
+        "source_order": 133,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.2.2",
@@ -1203,7 +1735,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.2 Conduct of the review",
         "version": "31 December 2025",
-        "source_order": 134
+        "source_order": 134,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.2.3",
@@ -1212,7 +1748,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.2 Conduct of the review",
         "version": "31 December 2025",
-        "source_order": 135
+        "source_order": 135,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.3.1",
@@ -1221,7 +1761,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.3 Outcome",
         "version": "31 December 2025",
-        "source_order": 136
+        "source_order": 136,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.3.2",
@@ -1230,7 +1774,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.3 Outcome",
         "version": "31 December 2025",
-        "source_order": 137
+        "source_order": 137,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.4.1",
@@ -1239,7 +1787,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.4 Payment pending review",
         "version": "31 December 2025",
-        "source_order": 138
+        "source_order": 138,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§11.4.2",
@@ -1248,7 +1800,11 @@
         "part_title": "Part 11 — Review",
         "section_title": "11.4 Payment pending review",
         "version": "31 December 2025",
-        "source_order": 139
+        "source_order": 139,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.1.1",
@@ -1257,7 +1813,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.1 Right of appeal",
         "version": "31 December 2025",
-        "source_order": 140
+        "source_order": 140,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.1.2",
@@ -1266,7 +1826,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.1 Right of appeal",
         "version": "31 December 2025",
-        "source_order": 141
+        "source_order": 141,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.1.3",
@@ -1275,7 +1839,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.1 Right of appeal",
         "version": "31 December 2025",
-        "source_order": 142
+        "source_order": 142,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.2.1",
@@ -1284,7 +1852,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.2 Procedure",
         "version": "31 December 2025",
-        "source_order": 143
+        "source_order": 143,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.2.2",
@@ -1293,7 +1865,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.2 Procedure",
         "version": "31 December 2025",
-        "source_order": 144
+        "source_order": 144,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.2.3",
@@ -1302,7 +1878,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.2 Procedure",
         "version": "31 December 2025",
-        "source_order": 145
+        "source_order": 145,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.3.1",
@@ -1311,7 +1891,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.3 Decisions of the Panel",
         "version": "31 December 2025",
-        "source_order": 146
+        "source_order": 146,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.3.2",
@@ -1320,7 +1904,11 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.3 Decisions of the Panel",
         "version": "31 December 2025",
-        "source_order": 147
+        "source_order": 147,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
     },
     {
         "clause_id": "§12.3.3",
@@ -1329,6 +1917,205 @@
         "part_title": "Part 12 — Appeal",
         "section_title": "12.3 Decisions of the Panel",
         "version": "31 December 2025",
-        "source_order": 148
+        "source_order": 148,
+        "effective_from": "2025-12-31",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "§6.4.1",
+        "clause_title": "6.4 Disregards",
+        "content": "The following are disregarded —\n\n(a) the first **$175 per month** of household earnings from employment;\n\n(b) child support received in respect of a dependent child;\n\n(c) a training allowance falling within §5.3;\n\n(d) payments made in respect of a disability and intended to meet the additional costs of that disability;\n\n(e) charitable payments made irregularly and not intended to meet ordinary living costs;\n\n(f) a care allowance, to the extent of $200 per month;\n\n(g) the income of a dependent child.",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.4 Disregards",
+        "version": "Amendment No. 2026-01",
+        "source_order": 1065,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.1",
+        "amendment_ref": "Amendment §1.1"
+    },
+    {
+        "clause_id": "§4.3.2",
+        "clause_title": "4.3 Recipient obligations",
+        "content": "A recipient must report any change in household composition, income, address, or the circumstances of any household member within **14 calendar days** of the change occurring, or within 14 calendar days of the recipient becoming aware of the change, whichever is later.",
+        "part_title": "Part 4 — Exclusions",
+        "section_title": "4.3 Recipient obligations",
+        "version": "Amendment No. 2026-01",
+        "source_order": 1045,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.2",
+        "amendment_ref": "Amendment §2.1"
+    },
+    {
+        "clause_id": "§9.1.4",
+        "clause_title": "9.1 Establishing an overpayment",
+        "content": "Where an overpayment has arisen from a change of circumstances, and the recipient reported the change within the **14 calendar days** required under §4.3, no overpayment shall be established in respect of any period before the date on which the Department was in a position to act on the report.",
+        "part_title": "Part 9 — Overpayments and Recovery",
+        "section_title": "9.1 Establishing an overpayment",
+        "version": "Amendment No. 2026-01",
+        "source_order": 1104,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.2",
+        "amendment_ref": "Amendment §2.2"
+    },
+    {
+        "clause_id": "§6.6.1",
+        "clause_title": "6.6 Income thresholds",
+        "content": "A household is not eligible where countable income exceeds the applicable threshold. The thresholds are —\n\n| Household size | Monthly threshold |\n|:--|:--|\n| 1 | $1,225 |\n| 2 | $1,650 |\n| 3 | $2,075 |\n| 4 | $2,500 |\n| 5 | $2,925 |\n| each additional member | + $425 |",
+        "part_title": "Part 6 — Income",
+        "section_title": "6.6 Income thresholds",
+        "version": "Amendment No. 2026-01",
+        "source_order": 1070,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.1",
+        "amendment_ref": "Amendment §3.1"
+    },
+    {
+        "clause_id": "§10.5.2",
+        "clause_title": "10.5 Sanctions",
+        "content": "A sanction is a reduction of the monthly award by 15 per cent for a period of 4 weeks for a first sanction, or 8 weeks for a subsequent sanction within 12 months.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "Amendment No. 2026-01",
+        "source_order": 1127,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.1",
+        "amendment_ref": "Amendment §4.1"
+    },
+    {
+        "clause_id": "Amendment §1.1",
+        "clause_title": "Amendment §1.1 - 1. Earnings disregard",
+        "content": "In §6.4.1(a), for \"$120 per month\" substitute \"**$175 per month**\".",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "1. Earnings disregard",
+        "version": "Amendment No. 2026-01",
+        "source_order": 149,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "Amendment §2.1",
+        "clause_title": "Amendment §2.1 - 2. Reporting of changes of circumstances",
+        "content": "In §4.3.2, for \"10 calendar days\" (in both places where it occurs) substitute \"**14 calendar days**\".",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "2. Reporting of changes of circumstances",
+        "version": "Amendment No. 2026-01",
+        "source_order": 150,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "Amendment §2.2",
+        "clause_title": "Amendment §2.2 - 2. Reporting of changes of circumstances",
+        "content": "In §9.1.4, for \"30 calendar days\" substitute \"**14 calendar days**\".\n\n*Note for staff: the figure stated in §9.1.4 did not previously correspond to the requirement in §4.3.2. This amendment aligns the two. Determinations made before 1 March 2026 remain subject to §1.2.3 and to paragraph 5 below.*",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "2. Reporting of changes of circumstances",
+        "version": "Amendment No. 2026-01",
+        "source_order": 151,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "Amendment §3.1",
+        "clause_title": "Amendment §3.1 - 3. Income thresholds",
+        "content": "In the table at §6.6.1, substitute the following —\n\n| Household size | Monthly threshold |\n|:--|:--|\n| 1 | $1,225 |\n| 2 | $1,650 |\n| 3 | $2,075 |\n| 4 | $2,500 |\n| 5 | $2,925 |\n| each additional member | + $425 |",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "3. Income thresholds",
+        "version": "Amendment No. 2026-01",
+        "source_order": 152,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "Amendment §4.1",
+        "clause_title": "Amendment §4.1 - 4. Sanctions",
+        "content": "In §10.5.2, for \"20 per cent\" substitute \"**15 per cent**\".",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "4. Sanctions",
+        "version": "Amendment No. 2026-01",
+        "source_order": 153,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "Amendment §4.2",
+        "clause_title": "Amendment §4.2 - 4. Sanctions",
+        "content": "After §10.5.3, insert —\n\n> **10.5.3A** A sanction must not be imposed in respect of a failure to report where the change of circumstances in question would have increased the award.",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "4. Sanctions",
+        "version": "Amendment No. 2026-01",
+        "source_order": 154,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "§5.1",
+        "clause_title": "Transitional Provision §5.1",
+        "content": "The amendments made by paragraphs 1, 3 and 4 apply to any determination made on or after 1 March 2026, including a determination in respect of a period before that date.",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "5. Transitional provision",
+        "version": "Amendment No. 2026-01",
+        "source_order": 155,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "§5.2",
+        "clause_title": "Transitional Provision §5.2",
+        "content": "The amendments made by paragraph 2 apply **only in respect of a change of circumstances occurring on or after 1 March 2026**. Where the change of circumstances occurred before 1 March 2026, the reporting period is the period that applied at the date of the change, irrespective of the date of the determination.",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "5. Transitional provision",
+        "version": "Amendment No. 2026-01",
+        "source_order": 156,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "§5.3",
+        "clause_title": "Transitional Provision §5.3",
+        "content": "Where a claim relates to a period spanning 1 March 2026, the applicable figures are those in force on each day of the period, and the award is apportioned accordingly under §7.4.3.\n\n\n*End of Amendment No. 2026-01.*",
+        "part_title": "Amendment No. 2026-01",
+        "section_title": "5. Transitional provision",
+        "version": "Amendment No. 2026-01",
+        "source_order": 157,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": null,
+        "amendment_ref": null
+    },
+    {
+        "clause_id": "§10.5.3A",
+        "clause_title": "Sanctions (Amended)",
+        "content": "A sanction must not be imposed in respect of a failure to report where the change of circumstances in question would have increased the award.",
+        "part_title": "Part 10 — Suspension, Termination and Sanctions",
+        "section_title": "10.5 Sanctions",
+        "version": "Amendment No. 2026-01",
+        "source_order": 158,
+        "effective_from": "2026-03-01",
+        "effective_to": null,
+        "transitional_rule": "§5.1",
+        "amendment_ref": "Amendment §4.2"
     }
 ]
