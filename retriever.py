@@ -4,6 +4,161 @@ import json
 import math
 import numpy as np
 
+def stem(word):
+    word = word.lower()
+    
+    # 1. Custom mappings for exact matching of key terms in this domain
+    overrides = {
+        "eligibility": "elig",
+        "eligible": "elig",
+        "countable": "count",
+        "counted": "count",
+        "counting": "count",
+        "resources": "resourc",
+        "resource": "resourc",
+        "assets": "asset",
+        "savings": "save",
+        "saving": "save",
+        "limit": "limit",
+        "limits": "limit",
+        "limitation": "limit",
+        "limitations": "limit",
+        "threshold": "threshold",
+        "thresholds": "threshold",
+        "document": "document",
+        "documents": "document",
+        "documentation": "document",
+        "specified": "specifi",
+        "specify": "specifi",
+        "applying": "appli",
+        "application": "appli",
+        "applicant": "appli",
+        "applies": "appli",
+        "apply": "appli",
+        "provided": "provid",
+        "provide": "provid",
+        "supplying": "suppli",
+        "supply": "suppli",
+        "excluding": "exclud",
+        "exclude": "exclud",
+        "excluded": "exclud",
+        "exclusion": "exclud",
+        "earnings": "earn",
+        "earned": "earn",
+        "earning": "earn",
+        "income": "income",
+        "incomes": "income",
+        "exceed": "exceed",
+        "exceeds": "exceed",
+        "exceeded": "exceed",
+        "cannot": "cannot",
+        "unable": "unabl",
+    }
+    if word in overrides:
+        return overrides[word]
+        
+    # 2. General fallback rules for suffix stripping
+    if len(word) > 4:
+        if word.endswith("sses"):
+            word = word[:-2]
+        elif word.endswith("ies"):
+            word = word[:-3] + "y"
+        elif word.endswith("ss"):
+            pass
+        elif word.endswith("s") and not word.endswith("us") and not word.endswith("is") and not word.endswith("as"):
+            word = word[:-1]
+            
+        if word.endswith("eed"):
+            if word.endswith("ceed"):
+                word = word[:-4] + "ceed" # e.g. exceed -> exceed
+        elif word.endswith("ing"):
+            word = word[:-3]
+            if word.endswith("at") or word.endswith("bl") or word.endswith("iz"):
+                word += "e"
+        elif word.endswith("ed"):
+            word = word[:-2]
+            if word.endswith("at") or word.endswith("bl") or word.endswith("iz"):
+                word += "e"
+        elif word.endswith("ly"):
+            word = word[:-2]
+        elif word.endswith("ment"):
+            word = word[:-4]
+            
+    return word
+
+def expand_query_tokens(stemmed_tokens):
+    expanded = list(stemmed_tokens)
+    token_set = set(stemmed_tokens)
+    
+    # 1. Asset synonyms
+    asset_syns = {"asset", "save", "wealth", "properti", "fund", "capit", "saving"}
+    if token_set.intersection(asset_syns):
+        if "resourc" not in token_set:
+            expanded.append("resourc")
+            
+    # 2. Resources/Assets synonym backward
+    if "resourc" in token_set:
+        if "asset" not in token_set:
+            expanded.append("asset")
+            
+    # 3. Excluded/Not countable
+    exclude_syns = {"exclud", "exempt", "disregard"}
+    if token_set.intersection(exclude_syns):
+        if "not" not in token_set:
+            expanded.append("not")
+        if "count" not in token_set:
+            expanded.append("count")
+            
+    # 4. Supply/Provide
+    supply_syns = {"provid", "submit", "send", "give", "present"}
+    if token_set.intersection(supply_syns):
+        if "suppli" not in token_set:
+            expanded.append("suppli")
+        if "accompani" not in token_set:
+            expanded.append("accompani")
+            
+    # 5. Required/Specified
+    req_syns = {"requir", "need", "must", "mandatori", "necessari"}
+    if token_set.intersection(req_syns):
+        if "specifi" not in token_set:
+            expanded.append("specifi")
+            
+    # 6. Limit/Threshold
+    limit_syns = {"limit", "threshold", "maximum", "max", "cap", "exceed", "abov", "more"}
+    if token_set.intersection(limit_syns):
+        for w in ["exceed", "limit", "threshold"]:
+            if w not in token_set:
+                expanded.append(w)
+                
+    # 7. Document/Evidence
+    doc_syns = {"document", "paper", "record", "proof", "doc", "specifi"}
+    if token_set.intersection(doc_syns):
+        if "evidenc" not in token_set:
+            expanded.append("evidenc")
+            
+    # 8. Income/Earnings
+    income_syns = {"income", "earn", "wage", "salari"}
+    if token_set.intersection(income_syns):
+        for w in ["income", "earn"]:
+            if w not in token_set:
+                expanded.append(w)
+                
+    # 9. Cannot/Unable
+    unable_syns = {"cannot", "unabl", "fail", "failur"}
+    if token_set.intersection(unable_syns):
+        for w in ["unabl", "cannot"]:
+            if w not in token_set:
+                expanded.append(w)
+
+    # 10. Broad Eligibility Concept
+    elig_syns = {"elig", "criteria", "condit", "qualifi", "guarante"}
+    if token_set.intersection(elig_syns):
+        for w in ["resourc", "income", "resid", "age", "exclud", "appli", "threshold", "limit"]:
+            if w not in token_set:
+                expanded.append(w)
+
+    return expanded
+
 # Configurable settings (loaded from environment or defaults)
 TOP_K = int(os.environ.get("TOP_K", 5))
 SEMANTIC_WEIGHT = float(os.environ.get("SEMANTIC_WEIGHT", 0.4))
@@ -33,7 +188,8 @@ class GroundedAnswerRetriever:
 
     def tokenize(self, text):
         cleaned = self.clean_text(text)
-        return cleaned.split()
+        raw_tokens = cleaned.split()
+        return [stem(t) for t in raw_tokens]
 
     def build_bm25_index(self):
         # BM25 Parameters
@@ -298,7 +454,8 @@ class GroundedAnswerRetriever:
         determination_date, event_date, is_spanning = self.extract_dates_from_query(query)
 
         query_tokens = self.tokenize(query)
-        bm25_scores = self.compute_bm25_scores(query_tokens)
+        expanded_tokens = expand_query_tokens(query_tokens)
+        bm25_scores = self.compute_bm25_scores(expanded_tokens)
         
         # Normalize BM25 scores to [0, 1]
         max_bm25 = max(bm25_scores) if bm25_scores else 0
