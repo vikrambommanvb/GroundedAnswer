@@ -93,17 +93,16 @@ Embeddings generated a high volume of API calls, leading to `429 RESOURCE_EXHAUS
 * **Local Embedding Models**: Use a lightweight sentence-transformer model locally for offline semantic search.
 * **Side-by-Side Version UI**: Develop a caseworker interface displaying historical changes side-by-side.
 
-## 9. Multi-API Support and Resiliency (Gemini & Groq)
+## 9. Groq Cloud API Transition & Resiliency
 
-### Why Multi-API Support was Added
-To prevent rate-limit blockages and support high-speed evaluations, we added integration for the **Groq Cloud API** alongside Google's **Gemini API**. If a user sets `GROQ_API_KEY` in their `.env` file, the assistant automatically routes queries to Groq, providing fast, date-aware responses.
+### Why Groq Was Selected Exclusively
+To avoid strict free-tier rate limits and resource-exhausted issues on Gemini, we transitioned the generation layer to utilize the **Groq Cloud API** exclusively. This provides sub-second reasoning response times and a higher API rate capacity, ensuring reliable, uninterrupted service.
 
 ### Zero-Dependency Request Structure
-The Groq API call is executed via standard Python `requests` (pre-installed in the virtual environment) pointing to the OpenAI-compatible chat completions endpoint (`https://api.groq.com/openai/v1/chat/completions`). This keeps the repository extremely clean and prevents version conflicts.
+The Groq API call is executed via standard Python `requests` (which is already pre-installed in the virtual environment), calling the OpenAI-compatible chat completions endpoint (`https://api.groq.com/openai/v1/chat/completions`). This allows us to communicate with the model without adding heavyweight SDK dependencies (like `groq` or `google-genai`), reducing the codebase's package footprint.
 
 ### Exponential Backoff Retry Handler
-We wrapped both the Gemini and Groq API calls in a retry loop that detects `429` and `RESOURCE_EXHAUSTED` errors. The loop retries the call up to 3 times with exponential backoff delays (2.0s, 4.0s), making the CLI highly resilient under concurrent evaluations.
+We wrapped the API calls in a robust retry loop that detects `429` (Rate Limited/Quota Exceeded) errors. The loop retries the call up to 3 times with exponential backoff delays (2.0s, 4.0s) before falling back to safe refusal, making the CLI highly resilient.
 
 ### Model Routing
-* **Gemini**: Defaults to `gemini-1.5-flash`
-* **Groq**: Defaults to `openai/gpt-oss-20b` (an active, high-capacity open-source instruction-following model on Groq Cloud). Both are fully configurable via `.env` variables.
+* **Model**: Defaults to `openai/gpt-oss-20b` (an active, high-capacity reasoning model on Groq Cloud). This is fully configurable via the `GROQ_MODEL` environment variable in the `.env` file.

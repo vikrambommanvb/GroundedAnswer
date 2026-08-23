@@ -120,17 +120,21 @@ def test_citation_validation_unauthorized():
 
 # --- 5. Mocked LLM Generation Tests (Phase 7-10) ---
 
-@patch("google.genai.Client")
-def test_mocked_generation_success(mock_client_class):
+@patch("requests.post")
+def test_mocked_generation_success(mock_post):
     """Verify successful generation and citation check."""
-    # Set fake API key so check passes
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = "You must report the changes within 10 days. [§4.3.2]"
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "You must report the changes within 10 days. [§4.3.2]"
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [{"clause_id": "§4.3.2", "clause_title": "Obligations", "content": "10 days", "part_title": "P", "section_title": "S"}]
     all_clauses = [{"clause_id": "§4.3.2"}]
@@ -139,16 +143,21 @@ def test_mocked_generation_success(mock_client_class):
     assert "within 10 days" in ans
     assert "[§4.3.2]" in ans
 
-@patch("google.genai.Client")
-def test_mocked_generation_refusal_on_insufficient_evidence(mock_client_class):
+@patch("requests.post")
+def test_mocked_generation_refusal_on_insufficient_evidence(mock_post):
     """Verify that generation falls back to refusal when the LLM refuses."""
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = "I don't know, here is who to ask: Supervisor"
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "I don't know, here is who to ask: Supervisor"
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [{"clause_id": "§4.3.2", "clause_title": "Obligations", "content": "10 days", "part_title": "P", "section_title": "S"}]
     all_clauses = [{"clause_id": "§4.3.2"}]
@@ -156,20 +165,25 @@ def test_mocked_generation_refusal_on_insufficient_evidence(mock_client_class):
     ans = generate_grounded_answer("What is the garbage day?", retrieved, all_clauses, "Supervisor")
     assert ans == "I don't know, here is who to ask: Supervisor"
 
-@patch("google.genai.Client")
-def test_mocked_contradiction_handling(mock_client_class):
+@patch("requests.post")
+def test_mocked_contradiction_handling(mock_post):
     """Verify that conflicting sections are highlighted as a contradiction."""
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = (
-        "There is a contradiction in the policy manual regarding reporting timeframes. "
-        "§4.3.2 states that changes must be reported within 10 days, while §9.1.4 states "
-        "a 30-day period. The manual does not resolve this conflict."
-    )
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": (
+                    "There is a contradiction in the policy manual regarding reporting timeframes. "
+                    "§4.3.2 states that changes must be reported within 10 days, while §9.1.4 states "
+                    "a 30-day period. The manual does not resolve this conflict."
+                )
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [
         {"clause_id": "§4.3.2", "clause_title": "Obligations", "content": "10 days", "part_title": "P", "section_title": "S"},
@@ -182,16 +196,21 @@ def test_mocked_contradiction_handling(mock_client_class):
     assert "§4.3.2" in ans
     assert "§9.1.4" in ans
 
-@patch("google.genai.Client")
-def test_mocked_prompt_injection_resistance(mock_client_class):
+@patch("requests.post")
+def test_mocked_prompt_injection_resistance(mock_post):
     """Verify prompt injection is ignored and grounding rules prevail."""
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = "I don't know, here is who to ask: Supervisor"
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "I don't know, here is who to ask: Supervisor"
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [{"clause_id": "§4.3.2", "clause_title": "Obligations", "content": "10 days", "part_title": "P", "section_title": "S"}]
     all_clauses = [{"clause_id": "§4.3.2"}]
@@ -358,16 +377,21 @@ def test_validate_citations_with_amendments():
 
 # --- 7. Mocked LLM Generation Tests for Date-Awareness ---
 
-@patch("google.genai.Client")
-def test_mocked_generation_post_amendment_disregard(mock_client_class):
+@patch("requests.post")
+def test_mocked_generation_post_amendment_disregard(mock_post):
     """Verify correct post-amendment earnings disregard generation."""
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = "For determinations made in April 2026, the earnings disregard is $175 per month [§6.4.1(a)] per [Amendment §1.1]."
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "For determinations made in April 2026, the earnings disregard is $175 per month [§6.4.1(a)] per [Amendment §1.1]."
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [
         {"clause_id": "§6.4.1", "clause_title": "Disregards", "content": "the first $175 per month", "part_title": "P", "section_title": "S", "version": "Amendment No. 2026-01", "applicability_status": "APPLICABLE"},
@@ -385,17 +409,22 @@ def test_mocked_generation_post_amendment_disregard(mock_client_class):
     assert "[§6.4.1(a)]" in ans or "[§6.4.1]" in ans
     assert "[Amendment §1.1]" in ans
 
-@patch("google.genai.Client")
-def test_mocked_generation_resolved_vs_unresolved_contradiction(mock_client_class):
+@patch("requests.post")
+def test_mocked_generation_resolved_vs_unresolved_contradiction(mock_post):
     """Verify that a post-March query does not report 10 vs 30 days contradiction, but pre-March does."""
-    os.environ["GEMINI_API_KEY"] = "fake-key-for-test"
+    os.environ["GROQ_API_KEY"] = "fake-key-for-test"
     
     # 1. Post-March query -> Resolved contradiction
-    mock_client = MagicMock()
     mock_response = MagicMock()
-    mock_response.text = "For a change occurring in April 2026, the reporting period is 14 calendar days under [§4.3.2] as amended by [Amendment §2.1]. The overpayment window is also 14 days under [§9.1.4] per [Amendment §2.2]."
-    mock_client.models.generate_content.return_value = mock_response
-    mock_client_class.return_value = mock_client
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "For a change occurring in April 2026, the reporting period is 14 calendar days under [§4.3.2] as amended by [Amendment §2.1]. The overpayment window is also 14 days under [§9.1.4] per [Amendment §2.2]."
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
     
     retrieved = [
         {"clause_id": "§4.3.2", "clause_title": "Obligations", "content": "14 calendar days", "part_title": "P", "section_title": "S", "version": "Amendment No. 2026-01", "applicability_status": "APPLICABLE"},

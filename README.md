@@ -85,8 +85,8 @@ Build a command-line **Date-Aware Grounded RAG** assistant for the Calder County
 
 ## Technology Stack
 - **Programming Language**: Python
-- **LLM API Provider**: Gemini API (via `google-genai` SDK) or Groq API (via standard HTTP `requests`)
-- **Libraries**: `google-genai` (Gemini SDK), `requests` (HTTP client), `numpy` (vector operations), `python-dotenv` (configuration), `pytest` (testing).
+- **LLM API Provider**: Groq API (via standard HTTP `requests`)
+- **Libraries**: `requests` (HTTP client), `numpy` (vector operations), `python-dotenv` (configuration), `pytest` (testing).
 
 ## Technology Definitions
 - **BM25**: A probabilistic search algorithm that calculates the relevance of documents to a given search query based on term frequencies and document lengths.
@@ -144,18 +144,10 @@ pip install -r requirements.txt
 ```
 
 ## API Key Configuration
-Create a `.env` file in the root of the project to configure your API keys:
-
-### Option A: Groq API (Recommended for Speed and Stability)
+Create a `.env` file in the root of the project to configure your Groq API key:
 ```env
 GROQ_API_KEY="your_groq_api_key_here"
 GROQ_MODEL="openai/gpt-oss-20b"
-```
-
-### Option B: Gemini API
-```env
-GEMINI_API_KEY="your_gemini_api_key_here"
-GEMINI_MODEL="gemini-1.5-flash"
 ```
 *(Note: `.env` is listed in `.gitignore` to prevent credentials from being committed).*
 

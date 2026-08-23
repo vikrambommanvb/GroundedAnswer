@@ -4,12 +4,10 @@ import json
 import logging
 from dotenv import load_dotenv
 
-# Silence google-genai logger warning messages
-logging.getLogger("google_genai").setLevel(logging.ERROR)
 load_dotenv()
 
 class MissingAPIKeyError(Exception):
-    """Raised when the Gemini API key is missing during generation."""
+    """Raised when the Groq API key is missing during generation."""
     pass
 
 class InconsistentCitationError(Exception):
@@ -81,12 +79,10 @@ def generate_grounded_answer(query, retrieved_clauses, all_clauses, refusal_cont
     Calls the Gemini API to generate a grounded answer using retrieved evidence.
     """
     groq_api_key = os.environ.get("GROQ_API_KEY")
-    gemini_api_key = os.environ.get("GEMINI_API_KEY")
-    
-    if not groq_api_key and not gemini_api_key:
+    if not groq_api_key:
         raise MissingAPIKeyError(
-            "Neither GEMINI_API_KEY nor GROQ_API_KEY is configured. "
-            "Please configure one of these variables in your .env file to run generation."
+            "GROQ_API_KEY environment variable is not configured. "
+            "Please configure this variable in your .env file to run generation."
         )
 
     # Build list of all valid clause IDs for citation validation
@@ -176,85 +172,48 @@ def generate_grounded_answer(query, retrieved_clauses, all_clauses, refusal_cont
     retry_delay = 2.0
     response_text = ""
 
-    if groq_api_key:
-        import requests
-        model_name = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {groq_api_key}",
-            "Content-Type": "application/json"
-        }
-        data = {
-            "model": model_name,
-            "messages": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            "temperature": 0.0,
-            "max_tokens": 1024
-        }
-        
-        for attempt in range(max_retries):
-            try:
-                response = requests.post(url, headers=headers, json=data, timeout=30)
-                if response.status_code == 200:
-                    result = response.json()
-                    response_text = result["choices"][0]["message"]["content"].strip()
-                    break
-                elif response.status_code == 429:
-                    if attempt < max_retries - 1:
-                        wait_time = retry_delay * (2 ** attempt)
-                        print(f"\n[Warning: Groq Rate limited (429). Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})]")
-                        time.sleep(wait_time)
-                        continue
-                print(f"Groq API Error (Status {response.status_code}): {response.text}")
-                return f"I don't know, here is who to ask: {refusal_contact}"
-            except Exception as e:
-                print(f"Error calling Groq API: {e}")
+    import requests
+    model_name = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {groq_api_key}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "model": model_name,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ],
+        "temperature": 0.0,
+        "max_tokens": 1024
+    }
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(url, headers=headers, json=data, timeout=30)
+            if response.status_code == 200:
+                result = response.json()
+                response_text = result["choices"][0]["message"]["content"].strip()
+                break
+            elif response.status_code == 429:
                 if attempt < max_retries - 1:
                     wait_time = retry_delay * (2 ** attempt)
+                    print(f"\n[Warning: Groq Rate limited (429). Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})]")
                     time.sleep(wait_time)
                     continue
-                return f"I don't know, here is who to ask: {refusal_contact}"
-        else:
-            if not response_text:
-                return f"I don't know, here is who to ask: {refusal_contact}"
+            print(f"Groq API Error (Status {response.status_code}): {response.text}")
+            return f"I don't know, here is who to ask: {refusal_contact}"
+        except Exception as e:
+            print(f"Error calling Groq API: {e}")
+            if attempt < max_retries - 1:
+                wait_time = retry_delay * (2 ** attempt)
+                time.sleep(wait_time)
+                continue
+            return f"I don't know, here is who to ask: {refusal_contact}"
     else:
-        # Use Gemini SDK
-        model_name = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
-        from google import genai
-        from google.genai import types
-        
-        client = genai.Client(api_key=gemini_api_key)
-        
-        for attempt in range(max_retries):
-            try:
-                config = types.GenerateContentConfig(
-                    system_instruction=system_prompt,
-                    temperature=0.0,
-                    max_output_tokens=1024,
-                )
-                
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=user_prompt,
-                    config=config
-                )
-                response_text = response.text.strip()
-                break
-            except Exception as e:
-                err_msg = str(e)
-                if "429" in err_msg or "quota" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
-                    if attempt < max_retries - 1:
-                        wait_time = retry_delay * (2 ** attempt)
-                        print(f"\n[Warning: Gemini Rate limited (429). Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})]")
-                        time.sleep(wait_time)
-                        continue
-                print(f"Error during generation: {e}")
-                return f"I don't know, here is who to ask: {refusal_contact}"
-        else:
-            if not response_text:
-                return f"I don't know, here is who to ask: {refusal_contact}"
+        if not response_text:
+            return f"I don't know, here is who to ask: {refusal_contact}"
 
     # Handle case where LLM decides to refuse
     if refusal_phrase in response_text or "I don't know, here is who to ask:" in response_text:
