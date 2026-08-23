@@ -61,26 +61,36 @@ Build a command-line **Date-Aware Grounded RAG** assistant for the Calder County
                         Conflict         No Conflict
                            |                 |
                            v                 v
-                    Explain Conflict   Grounded Prompt
+                    Explain Conflict   GROQ_API_KEY Present?
+                           |           (Execution Mode)
                            |                 |
-                           +--------+--------+
-                                    |
-                                    v
-                                 Gemini
-                                    |
-                                    v
-                           Citation Validation
-                           (Post-Generation Guard)
-                                    |
-                           +--------+--------+
-                           |                 |
-                        Invalid            Valid
-                           |                 |
-                           v                 v
-                         REFUSE             ANSWER
-                                             |
-                                             v
-                                      [§X.X.X] citations
+                           |        +--------+--------+
+                           |        |                 |
+                           |       Yes                No (Offline Fallback)
+                           |        |                 |
+                           |        v                 v
+                           |  Grounded Prompt   Local Synthesis Engine
+                           |        |           (Stemmed Token Overlap,
+                           |        v           Multi-Clause Synthesis,
+                           |      Gemini        Residency/Resource Checks)
+                           |        |                 |
+                           |        v                 |
+                           | Citation Validation      |
+                           | (Post-Generation Guard)  |
+                           |        |                 |
+                           |    +---+---+             |
+                           |    |       |             |
+                           | Invalid  Valid           |
+                           |    |       |             |
+                           |    v       +-------------+
+                           |  REFUSE    |
+                           +----+-------+
+                                |
+                                v
+                             ANSWER
+                                |
+                                v
+                         [§X.X.X] citations
 ```
 
 ## Technology Stack
