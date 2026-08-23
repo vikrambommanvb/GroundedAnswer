@@ -157,6 +157,14 @@ def expand_query_tokens(stemmed_tokens):
             if w not in token_set:
                 expanded.append(w)
 
+    # 11. Resource Limit combinations (e.g. "resource limit", "allowed resources", "maximum resources")
+    res_terms = {"resourc", "asset", "save", "saving", "wealth"}
+    lim_terms = {"limit", "threshold", "maximum", "max", "cap", "exceed", "abov", "allow", "permit"}
+    if token_set.intersection(res_terms) and token_set.intersection(lim_terms):
+        for w in ["count", "exceed", "resourc"]:
+            if w not in token_set:
+                expanded.append(w)
+
     return expanded
 
 # Configurable settings (loaded from environment or defaults)
@@ -521,12 +529,16 @@ class GroundedAnswerRetriever:
         # Add referenced clauses to results if not already retrieved
         retrieved_ids = {tr["clause_id"] for tr in top_results}
         for ref_id in cross_ref_ids:
-            if ref_id not in retrieved_ids:
+            if ref_id.count(".") == 1 and ref_id.startswith("§"):
+                ref_clauses = [c for c in self.clauses if c["clause_id"].startswith(ref_id + ".")]
+            else:
                 ref_clauses = [c for c in self.clauses if c["clause_id"] == ref_id]
-                if ref_clauses:
-                    ref_resolved = self.resolve_applicability(ref_clauses, determination_date, event_date, is_spanning)
-                    for rc in ref_resolved:
-                        rc_copy = rc.copy()
+                
+            if ref_clauses:
+                ref_resolved = self.resolve_applicability(ref_clauses, determination_date, event_date, is_spanning)
+                for rc in ref_resolved:
+                    rc_copy = rc.copy()
+                    if rc_copy["clause_id"] not in retrieved_ids:
                         top_results.append({
                             "clause_id": rc_copy["clause_id"],
                             "clause_title": rc_copy["clause_title"],
