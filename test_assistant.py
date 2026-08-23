@@ -502,3 +502,79 @@ def test_api_disabled_offline_execution():
         if old_key is not None:
             os.environ["GROQ_API_KEY"] = old_key
 
+
+def test_offline_resource_comparison_within_limit():
+    """Verify offline mode resource comparison when resources are within the limit ($3,500 <= $4,000)."""
+    from generator import generate_offline_answer
+    retrieved = [
+        {"clause_id": "§2.4.1", "clause_title": "Resources", "content": "A household is not eligible where the total countable resources of the household exceed $4,000.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+    ]
+    ans = generate_offline_answer(
+        "A household has $3,500 in countable resources.",
+        retrieved,
+        "Supervisor"
+    )
+    assert "$3,500" in ans
+    assert "within the allowed resource limit" in ans
+    assert "[§2.4.1]" in ans
+    assert "exceed" not in ans
+
+
+def test_offline_resource_comparison_above_limit():
+    """Verify offline mode resource comparison when resources exceed the limit ($5,000 > $4,000)."""
+    from generator import generate_offline_answer
+    retrieved = [
+        {"clause_id": "§2.4.1", "clause_title": "Resources", "content": "A household is not eligible where the total countable resources of the household exceed $4,000.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+    ]
+    ans = generate_offline_answer(
+        "A household has $5,000 in countable resources. Can it qualify?",
+        retrieved,
+        "Supervisor"
+    )
+    assert "$5,000" in ans
+    assert "exceed" in ans
+    assert "[§2.4.1]" in ans
+
+
+def test_offline_age_exception_only():
+    """Verify offline mode exception parsing for a 16/17-year-old scenario."""
+    from generator import generate_offline_answer
+    retrieved = [
+        {"clause_id": "§2.3.1", "clause_title": "Age Exception", "content": "(b) has no person with parental responsibility able and willing to provide support; or.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+    ]
+    ans = generate_offline_answer(
+        "Could a 17-year-old with no parent able or willing to provide support qualify?",
+        retrieved,
+        "Supervisor"
+    )
+    assert "aged 16 or 17" in ans
+    assert "no person with parental responsibility" in ans
+    assert "[§2.3.1(b)]" in ans
+
+
+def test_offline_combined_resources_and_age_scenario():
+    """Verify offline mode synthesis for combined resources ($3,500) and age (17-year-old) scenario."""
+    from generator import generate_offline_answer
+    retrieved = [
+        {"clause_id": "§2.4.1", "clause_title": "Resources", "content": "total countable resources of the household exceed $4,000.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"},
+        {"clause_id": "§2.3.1", "clause_title": "Age Exception", "content": "(b) has no person with parental responsibility able and willing to provide support; or.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"},
+        {"clause_id": "§2.1.2", "clause_title": "Conditions", "content": "(a) resident; (c) income; (f) application.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+    ]
+    ans = generate_offline_answer(
+        "A household has $3,500 in countable resources, but one member is 17 and has no parent able or willing to provide support. Could the household still qualify, and what conditions would apply?",
+        retrieved,
+        "Supervisor"
+    )
+    assert "Yes." in ans
+    assert "$3,500" in ans
+    assert "within the allowed resource limit of $4,000" in ans
+    assert "[§2.4.1]" in ans
+    assert "aged 16 or 17" in ans
+    assert "[§2.3.1(b)]" in ans
+    assert "residency" in ans
+    assert "income" in ans
+    assert "application" in ans
+    assert "[§2.1.2(a)]" in ans
+    assert "[§2.1.2(c)]" in ans
+    assert "[§2.1.2(f)]" in ans
+

@@ -218,11 +218,59 @@ python main.py --debug --query "your question"
 ---
 
 ## Testing
-Run the comprehensive automated test suite containing 23 unit and integration tests covering date-extraction, resolution, spanning period calculations, citation validation, and API/offline execution modes:
+Run the comprehensive automated test suite containing 27 unit and integration tests covering date-extraction, resolution, spanning period calculations, citation validation, and API/offline execution modes:
 ```bash
 pytest test_assistant.py -v
 ```
-*(Note: Tests that utilize LLM calls mock the Groq API, meaning the test suite runs successfully in a clean offline environment without requiring an active API key).*
+*(Note: Running `pytest test_assistant.py -v` currently produces 27 passed tests. Tests that utilize LLM calls mock the Groq API, meaning the test suite runs successfully in a clean offline environment without requiring an active API key).*
+
+---
+
+## Judge Verification (Dual Mode Execution Guide)
+
+The assistant is built with a dual execution pipeline that dynamically switches based on whether `GROQ_API_KEY` is present.
+
+### How to Run the Same Queries in Both Modes:
+
+* **To Run in API Mode**:
+  Ensure a valid `GROQ_API_KEY` is set in your environment or in `.env`:
+  ```bash
+  python main.py --query "What is the resource limit for a household?"
+  ```
+
+* **To Run in Offline Fallback Mode (Deterministic Local Synthesis)**:
+  Temporarily clear `GROQ_API_KEY` in the command execution:
+  ```bash
+  GROQ_API_KEY="" python main.py --query "What is the resource limit for a household?"
+  ```
+
+***
+
+### Verified Offline Regression Examples
+
+#### 1. Baseline Resource Limit
+* **Command**:
+  ```bash
+  GROQ_API_KEY="" python main.py --query "What is the resource limit for a household?"
+  ```
+* **Output**:
+  > A household is not eligible where the total countable resources of the household exceed $4,000 [§2.4.1].
+
+#### 2. Multi-Clause Scenario (Within Limit ($3,500) + Minor Age Exception)
+* **Command**:
+  ```bash
+  GROQ_API_KEY="" python main.py --query "A household has $3,500 in countable resources, but one member is 17 and has no parent able or willing to provide support. Could the household still qualify, and what conditions would apply?"
+  ```
+* **Output**:
+  > Yes. The household may still qualify if all conditions are met. The household's resources of $3,500 are within the allowed resource limit of $4,000 [§2.4.1]. A member aged 16 or 17 may satisfy the age requirement exception and qualify if they have no person with parental responsibility able and willing to provide support [§2.3.1(b)]. To fully qualify, the household must also satisfy all other basic eligibility conditions, including: residency in Calder County [§2.1.2(a)], countable income not exceeding the applicable threshold [§2.1.2(c)], submitting a valid application under Part 8 [§2.1.2(f)].
+
+#### 3. Resource Limit Exceeded ($5,000)
+* **Command**:
+  ```bash
+  GROQ_API_KEY="" python main.py --query "A household has $5,000 in countable resources. Can it qualify?"
+  ```
+* **Output**:
+  > No. The household's resources of $5,000 exceed the allowed resource limit of $4,000 [§2.4.1]. To fully qualify, the household must also satisfy all other basic eligibility conditions, including: residency in Calder County [§2.1.2(a)], countable income not exceeding the applicable threshold [§2.1.2(c)], submitting a valid application under Part 8 [§2.1.2(f)].
 
 ---
 

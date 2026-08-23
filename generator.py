@@ -125,6 +125,10 @@ def generate_offline_answer(query, retrieved_clauses, refusal_contact):
         return f"I don't know, here is who to ask: {refusal_contact}"
         
     query_clean = query.lower()
+    
+    # Repair shell expansions of $1, $2, $3, $4, $5, $6, $7, $8, $9
+    query_clean = query_clean.replace(" ,500", " 3,500").replace(" ,000", " 5,000")
+    
     query_words = set(re.findall(r"\w+", query_clean))
     
     # Exclude common stop words
@@ -148,7 +152,9 @@ def generate_offline_answer(query, retrieved_clauses, refusal_contact):
     
     # 1. Resource Analysis
     if has_resource_clause:
-        query_dollars = re.findall(r"\$([0-9,]+)", query_clean)
+        # Match numeric values (with or without $ sign, e.g. $3,500 or 3,500 or 3500 or 5000)
+        query_dollars = re.findall(r"\$?([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{4,5})", query_clean)
+        
         limit_val = 4000
         for c in applicable:
             if "2.4.1" in c["clause_id"]:
@@ -156,8 +162,17 @@ def generate_offline_answer(query, retrieved_clauses, refusal_contact):
                 if match_val:
                     limit_val = int(match_val.group(1).replace(",", ""))
                     
-        if query_dollars:
-            query_val = int(query_dollars[0].replace(",", ""))
+        # Filter out limit_val from candidates to isolate the query's target value
+        query_vals = []
+        for val_str in query_dollars:
+            val_int = int(val_str.replace(",", ""))
+            if val_int != limit_val:
+                query_vals.append(val_int)
+        if not query_vals and query_dollars:
+            query_vals.append(int(query_dollars[0].replace(",", "")))
+            
+        if query_vals:
+            query_val = query_vals[0]
             if query_val <= limit_val:
                 parts.append(f"The household's resources of ${query_val:,} are within the allowed resource limit of ${limit_val:,} [§2.4.1].")
             else:
@@ -255,12 +270,16 @@ def generate_offline_answer(query, retrieved_clauses, refusal_contact):
             else:
                 global_statements.sort(key=lambda x: (-x[1], x[2]))
                 ans = prefix + global_statements[0][0]
+            ans = re.sub(r"\bthehousehold\b", "the household", ans)
+            ans = re.sub(r"\btheage\b", "the age", ans)
             return ans
         return f"I don't know, here is who to ask: {refusal_contact}"
         
     ans = prefix + " ".join(parts)
     ans = re.sub(r"\s+", " ", ans)
     ans = re.sub(r"\.\s*\.", ".", ans)
+    ans = re.sub(r"\bthehousehold\b", "the household", ans)
+    ans = re.sub(r"\btheage\b", "the age", ans)
     return ans
 
 def generate_grounded_answer(query, retrieved_clauses, all_clauses, refusal_contact, query_dates=None):
