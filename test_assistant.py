@@ -446,3 +446,59 @@ def test_mocked_generation_resolved_vs_unresolved_contradiction(mock_post):
     assert "[§4.3.2]" in ans
     assert "[Amendment §2.1]" in ans
 
+# --- 6. API-Enabled vs API-Disabled Execution Mode Tests ---
+
+@patch("requests.post")
+def test_api_enabled_execution(mock_post):
+    """Verify that when GROQ_API_KEY is present, API-enabled path works (uses LLM)."""
+    os.environ["GROQ_API_KEY"] = "fake-api-key-present"
+    
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "choices": [{
+            "message": {
+                "content": "Countable resources must not exceed $4,000. [§2.4.1]"
+            }
+        }]
+    }
+    mock_post.return_value = mock_response
+    
+    retrieved = [
+        {"clause_id": "§2.4.1", "clause_title": "Resources", "content": "total countable resources of the household exceed $4,000", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+    ]
+    all_clauses = [{"clause_id": "§2.4.1"}]
+    
+    ans = generate_grounded_answer(
+        "What is the resource limit?",
+        retrieved,
+        all_clauses,
+        "Supervisor"
+    )
+    assert "exceed $4,000" in ans
+    assert "[§2.4.1]" in ans
+    assert mock_post.called
+
+def test_api_disabled_offline_execution():
+    """Verify that when GROQ_API_KEY is missing, offline pathway automatically generates grounded answers."""
+    # Temporarily remove GROQ_API_KEY
+    old_key = os.environ.pop("GROQ_API_KEY", None)
+    try:
+        retrieved = [
+            {"clause_id": "§2.4.1", "clause_title": "Resources", "content": "A household is not eligible where the total countable resources of the household exceed $4,000.", "part_title": "P", "section_title": "S", "version": "base", "applicability_status": "APPLICABLE"}
+        ]
+        all_clauses = [{"clause_id": "§2.4.1"}]
+        
+        ans = generate_grounded_answer(
+            "What is the resource limit?",
+            retrieved,
+            all_clauses,
+            "Supervisor"
+        )
+        assert "exceed $4,000" in ans
+        assert "[§2.4.1]" in ans
+    finally:
+        # Restore key if it was set
+        if old_key is not None:
+            os.environ["GROQ_API_KEY"] = old_key
+
